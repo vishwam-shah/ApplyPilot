@@ -7,15 +7,36 @@ Never apply where Indian candidates are not accepted.
 Status: research in progress (2026-10-27). Merge architecture section gets filled in once the
 job-apply-agent map is done.
 
-## 1. Merge (keep the best of both)
-- [ ] Decide the base project and folder layout (pending job-apply-agent map)
-- [ ] Keep from job-apply-agent: answers.yaml rule engine (regex + india: variants, salary-in-range logic),
-      Chrome-extension handoff (forms open in your own Chrome), categories/ranking, verified sources.yaml,
-      tracker UI, LLM router (NVIDIA -> Groq ...), never_claim / apply_titles guards
-- [ ] Keep from ApplyPilot (refine branch): locked-down Claude agent (browser-only tools), review mode
-      with auto-detected confirmation page, India-first queue + work-auth gate, fast ATS discovery,
-      per-job score saving, fallback LLM chain
-- [ ] One database, one profile/answers file, one CLI
+## 1. Merge (decided 2026-10-27: job-apply-agent is the base)
+job-apply-agent already has the dashboard, tracker, dedupe, legitimacy scoring, answers.yaml rules,
+Chrome-extension handoff, outreach/mailer with send interlocks, Task Scheduler installer and
+330+ verified boards. ApplyPilot is a CLI; port its strengths in rather than the other way round.
+
+Port from ApplyPilot (refine branch):
+- [ ] Claude Code applier (browser-only, strict MCP, dontAsk, uploads confined to worker dir) as the
+      fallback for every job job-apply-agent marks `manual` (Keka, Darwinbox, Zoho, Workday, custom sites)
+- [ ] Review-mode confirmation detection from page text (Ashby in-page "Application submitted")
+- [ ] Work-authorization gate: country-restricted remote rejected, scorer/agent stop on
+      "not open to India"; unify the three India detectors (jobspy_in.is_india, crew._INDIA, Answerer.job_in_india)
+- [ ] Location matcher with whole-word patterns and home-market ordering
+
+Speed (job-apply-agent fetch ~11 min vs ApplyPilot ~45 s):
+- [ ] SmartRecruiters: parallel detail calls (currently sequential per posting)
+- [ ] Workday: cap details, parallel tenants; HackerNews: parallel item fetch
+- [ ] Ingest: batch fingerprint lookups instead of one SELECT per job
+- [ ] Cache resume.yaml in Answerer._latest_role
+- [ ] JobSpy sweep: only 24h-old postings, smaller budget
+
+job-apply-agent bugs to fix in the merge:
+- [ ] Chrome handoff truncates long answers / cover letters to 300 chars (answers.py:248)
+- [ ] answers log keyed by label: duplicate labels overwrite each other
+- [ ] per-company cap ignores `ready` attempts (crew._company_count)
+- [ ] ingest never updates URL/id of an existing row; gated rows never refresh last_seen_dt
+- [ ] rescore_all skips experience / feed_categories gates and drops the experience reason
+- [ ] verify_sources.py: rewrites sources.yaml (loses comments), never prunes dead boards
+- [ ] requirements.txt missing pypdf; attachment_filename still "CV_VISHWAM_SEP.pdf"
+- [ ] dead code: weworkremotely.py unregistered, legacy jobagent/ + scripts/apply_assist.py
+- [ ] profile.salary_bands still USD placeholders
 
 ## 2. Discovery: latest openings, startups first
 - [ ] Startup registry per city (research: `research_*.json`, verified against live ATS APIs)
@@ -34,7 +55,8 @@ job-apply-agent map is done.
       No raw Google scraping (CAPTCHA-blocked, against terms).
 
 ## 3. Daily schedule
-- [ ] Windows Task Scheduler job (runs locally; apply needs your Chrome and your Submit click):
+- [ ] Extend job-apply-agent scripts/install_schedule.ps1 + run_pipeline.py (already: ingest -> purge
+      -> outreach build_queue) with the apply step. Runs locally; apply needs your Chrome and Submit click:
   - morning: discover (fresh feed + all boards) -> score -> queue
   - then: fill forms one by one in review mode; desktop notification when a form is ready
   - you enter CAPTCHA / security code and press Submit; confirmation is auto-detected
@@ -44,8 +66,10 @@ job-apply-agent map is done.
 ## 4. Gmail sender (HR / careers emails)
 - [ ] Find addresses only from public sources: the job post itself, the company careers/contact page,
       "email your resume to ..." postings. Never guess addresses (bounces damage your Gmail sender reputation).
-- [ ] Reuse job-apply-agent `mailer.py` / `outreach.py` / `email_template.txt` if they fit
-- [ ] Gmail API with OAuth (send-only scope `gmail.send`), not the third-party Gmail MCP
+- [ ] Reuse job-apply-agent outreach: inbox_discovery (role inboxes only, MX-checked), outreach build_queue,
+      mailer with 6 send interlocks (enabled flag, approved, MX-verified contact, attachment, 25/day,
+      60-day company cooldown). Currently outreach_enabled=False.
+- [ ] Sending: SMTP + Gmail App Password works today; optionally move to Gmail API OAuth send-only scope
 - [ ] Personalised email per job: role, why you fit (from resume), CV_VISHWAM_OCTOBER.pdf attached
 - [ ] Safety: one email per company per role, max ~20-30/day, spacing between sends,
       review queue before sending (approve all / per email), log every send in the tracker
