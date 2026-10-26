@@ -1,16 +1,22 @@
 """
 Unified LLM client for ApplyPilot.
 
-Auto-detects provider from environment:
-  GEMINI_API_KEY  -> Google Gemini (default: gemini-2.0-flash)
-  OPENAI_API_KEY  -> OpenAI (default: gpt-4o-mini)
-  LLM_URL         -> Local llama.cpp / Ollama compatible endpoint
+Auto-detects providers from environment (every key that is set joins the
+fallback chain, in this order):
+  LLM_URL         -> Any OpenAI-compatible endpoint (LLM_API_KEY, LLM_MODEL)
+  NVIDIA_API_KEY  -> NVIDIA NIM (NVIDIA_MODEL, default: nemotron-3-super-120b-a12b)
+  GROQ_API_KEY    -> Groq (GROQ_MODEL, default: qwen/qwen3.8-27b)
+  GEMINI_API_KEY  -> Google Gemini (GEMINI_MODEL, default: gemini-3.8-flash)
+  OPENAI_API_KEY  -> OpenAI (OPENAI_MODEL, default: gpt-4o-mini)
 
-LLM_MODEL env var overrides the model name for any provider.
+LLM_MODEL overrides the model of the first provider in the chain. When a
+provider keeps failing (quota, outage), the next one is used.
 """
 
 import logging
 import os
+import re
+import threading
 import time
 
 import httpx
@@ -21,42 +27,44 @@ log = logging.getLogger(__name__)
 # Provider detection
 # ---------------------------------------------------------------------------
 
-def _detect_provider() -> tuple[str, str, str]:
-    """Return (base_url, model, api_key) based on environment variables.
+def _detect_providers() -> list[tuple[str, str, str]]:
+    """Return [(base_url, model, api_key), ...] for every configured provider.
 
     Reads env at call time (not module import time) so that load_env() called
     in _bootstrap() is always visible here.
     """
-    gemini_key = os.environ.get("GEMINI_API_KEY", "")
-    openai_key = os.environ.get("OPENAI_API_KEY", "")
-    local_url = os.environ.get("LLM_URL", "")
-    model_override = os.environ.get("LLM_MODEL", "")
-
-    if gemini_key and not local_url:
-        return (
-            "https://generativelanguage.googleapis.com/v1beta/openai",
-            model_override or "gemini-2.0-flash",
-            gemini_key,
+    env = os.environ.get
+    chain: list[tuple[str, str, str]] = []
+    if env("LLM_URL"):
+        chain.append((env("LLM_URL").rstrip("/"), env("LLM_MODEL_LOCAL") or "local-model",
+                      env("LLM_API_KEY", "")))
+    if env("NVIDIA_API_KEY"):
+        chain.append(("https://integrate.api.nvidia.com/v1",
+                      env("NVIDIA_MODEL") or "nvidia/nemotron-3-super-120b-a12b",
+                      env("NVIDIA_API_KEY")))
+    if env("GROQ_API_KEY"):
+        chain.append(("https://api.groq.com/openai/v1",
+                      env("GROQ_MODEL") or "qwen/qwen3.8-27b", env("GROQ_API_KEY")))
+    if env("GEMINI_API_KEY"):
+        chain.append((_GEMINI_COMPAT_BASE, env("GEMINI_MODEL") or "gemini-3.8-flash",
+                      env("GEMINI_API_KEY")))
+    if env("OPENAI_API_KEY"):
+        chain.append(("https://api.openai.com/v1", env("OPENAI_MODEL") or "gpt-4o-mini",
+                      env("OPENAI_API_KEY")))
+    if not chain:
+        raise RuntimeError(
+            "No LLM provider configured. Set NVIDIA_API_KEY, GROQ_API_KEY, "
+            "GEMINI_API_KEY, OPENAI_API_KEY, or LLM_URL in your environment."
         )
+    if env("LLM_MODEL"):
+        base, _, key = chain[0]
+        chain[0] = (base, env("LLM_MODEL"), key)
+    return chain
 
-    if openai_key and not local_url:
-        return (
-            "https://api.openai.com/v1",
-            model_override or "gpt-4o-mini",
-            openai_key,
-        )
 
-    if local_url:
-        return (
-            local_url.rstrip("/"),
-            model_override or "local-model",
-            os.environ.get("LLM_API_KEY", ""),
-        )
-
-    raise RuntimeError(
-        "No LLM provider configured. "
-        "Set GEMINI_API_KEY, OPENAI_API_KEY, or LLM_URL in your environment."
-    )
+def _detect_provider() -> tuple[str, str, str]:
+    """First provider in the chain (kept for callers that want just one)."""
+    return _detect_providers()[0]
 
 
 # ---------------------------------------------------------------------------
@@ -163,6 +171,16 @@ class LLMClient:
             "temperature": temperature,
             "max_tokens": max_tokens,
         }
+        # Thinking tokens eat the max_tokens budget (and free-tier quota) and
+        # the callers only parse the final answer.
+        mid = self.model.lower()
+        if "api.groq.com" in self.base_url and mid.startswith(("qwen/", "deepseek")):
+            payload["reasoning_format"] = "hidden"
+            payload["reasoning_effort"] = "none"
+        elif "gpt-oss" in mid:
+            payload["reasoning_effort"] = "low"
+        elif self._is_gemini:
+            payload["reasoning_effort"] = "low"
 
         resp = self._client.post(
             f"{self.base_url}/chat/completions",
@@ -181,7 +199,10 @@ class LLMClient:
     def _handle_compat_response(resp: httpx.Response) -> str:
         resp.raise_for_status()
         data = resp.json()
-        return data["choices"][0]["message"]["content"]
+        content = data["choices"][0]["message"].get("content") or ""
+        # Reasoning models put chain-of-thought in <think> tags; callers parse
+        # the answer, so drop it.
+        return re.sub(r"<think>.*?</think>", "", content, flags=re.S).strip()
 
     # -- public API ---------------------------------------------------------
 
@@ -239,6 +260,8 @@ class LLMClient:
                             wait = float(retry_after)
                         except (ValueError, TypeError):
                             wait = _RATE_LIMIT_BASE_WAIT * (2 ** attempt)
+                        if wait > 60:
+                            raise  # quota window, not a blip: let the fallback chain move on
                     else:
                         wait = min(_RATE_LIMIT_BASE_WAIT * (2 ** attempt), 60)
 
@@ -284,14 +307,55 @@ class _GeminiCompatForbidden(Exception):
 # Singleton
 # ---------------------------------------------------------------------------
 
-_instance: LLMClient | None = None
+class FallbackClient:
+    """Tries each configured provider in order, moving on when one fails."""
+
+    def __init__(self, clients: list[LLMClient]) -> None:
+        self.clients = clients
+        self._lock = threading.Lock()
+        self._active = 0
+
+    @property
+    def model(self) -> str:
+        return self.clients[self._active].model
+
+    def chat(self, messages: list[dict], **kwargs) -> str:
+        last_exc: Exception | None = None
+        start = self._active
+        for offset in range(len(self.clients)):
+            idx = (start + offset) % len(self.clients)
+            client = self.clients[idx]
+            try:
+                out = client.chat(messages, **kwargs)
+                if idx != self._active:
+                    with self._lock:
+                        self._active = idx
+                    log.warning("LLM fallback: now using %s (%s)", client.model, client.base_url)
+                return out
+            except Exception as exc:  # quota, auth, outage: try the next provider
+                last_exc = exc
+                log.warning("LLM provider %s failed: %s", client.model, str(exc)[:200])
+        raise RuntimeError(f"All LLM providers failed. Last error: {last_exc}") from last_exc
+
+    def ask(self, prompt: str, **kwargs) -> str:
+        return self.chat([{"role": "user", "content": prompt}], **kwargs)
+
+    def close(self) -> None:
+        for c in self.clients:
+            c.close()
 
 
-def get_client() -> LLMClient:
-    """Return (or create) the module-level LLMClient singleton."""
+_instance: FallbackClient | None = None
+_instance_lock = threading.Lock()
+
+
+def get_client() -> FallbackClient:
+    """Return (or create) the module-level LLM client singleton."""
     global _instance
-    if _instance is None:
-        base_url, model, api_key = _detect_provider()
-        log.info("LLM provider: %s  model: %s", base_url, model)
-        _instance = LLMClient(base_url, model, api_key)
+    with _instance_lock:
+        if _instance is None:
+            chain = _detect_providers()
+            for base_url, model, _ in chain:
+                log.info("LLM provider: %s  model: %s", base_url, model)
+            _instance = FallbackClient([LLMClient(*c) for c in chain])
     return _instance

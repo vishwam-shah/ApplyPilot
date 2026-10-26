@@ -35,7 +35,7 @@ console = Console()
 STAGE_ORDER = ("discover", "enrich", "score", "tailor", "cover", "pdf")
 
 STAGE_META: dict[str, dict] = {
-    "discover": {"desc": "Job discovery (JobSpy + Workday + smart extract)"},
+    "discover": {"desc": "Job discovery (ATS boards + JobSpy + Workday + smart extract)"},
     "enrich":   {"desc": "Detail enrichment (full descriptions + apply URLs)"},
     "score":    {"desc": "LLM scoring (fit 1-10)"},
     "tailor":   {"desc": "Resume tailoring (LLM + validation)"},
@@ -60,42 +60,47 @@ _UPSTREAM: dict[str, str | None] = {
 # ---------------------------------------------------------------------------
 
 def _run_discover(workers: int = 1) -> dict:
-    """Stage: Job discovery — JobSpy, Workday, and smart-extract scrapers."""
-    stats: dict = {"jobspy": None, "workday": None, "smartextract": None}
+    """Stage: Job discovery — ATS boards, JobSpy, Workday, and smart-extract scrapers.
 
-    # JobSpy
-    console.print("  [cyan]JobSpy full crawl...[/cyan]")
-    try:
+    ``discovery_sources`` in searches.yaml picks which run (default: all).
+    """
+    from applypilot.config import load_search_config
+
+    enabled = load_search_config().get("discovery_sources") or ["ats", "jobspy", "workday", "smartextract"]
+    stats: dict = {}
+
+    def _step(key: str, label: str, fn) -> None:
+        if key not in enabled:
+            return
+        console.print(f"  [cyan]{label}...[/cyan]")
+        try:
+            fn()
+            stats[key] = "ok"
+        except Exception as e:
+            log.error("%s failed: %s", label, e)
+            console.print(f"  [red]{label} error:[/red] {e}")
+            stats[key] = f"error: {e}"
+
+    def _ats():
+        from applypilot.discovery.ats import run_ats_discovery
+        run_ats_discovery(workers=max(workers, 8))
+
+    def _jobspy():
         from applypilot.discovery.jobspy import run_discovery
         run_discovery()
-        stats["jobspy"] = "ok"
-    except Exception as e:
-        log.error("JobSpy crawl failed: %s", e)
-        console.print(f"  [red]JobSpy error:[/red] {e}")
-        stats["jobspy"] = f"error: {e}"
 
-    # Workday corporate scraper
-    console.print("  [cyan]Workday corporate scraper...[/cyan]")
-    try:
+    def _workday():
         from applypilot.discovery.workday import run_workday_discovery
         run_workday_discovery(workers=workers)
-        stats["workday"] = "ok"
-    except Exception as e:
-        log.error("Workday scraper failed: %s", e)
-        console.print(f"  [red]Workday error:[/red] {e}")
-        stats["workday"] = f"error: {e}"
 
-    # Smart extract
-    console.print("  [cyan]Smart extract (AI-powered scraping)...[/cyan]")
-    try:
+    def _smart():
         from applypilot.discovery.smartextract import run_smart_extract
         run_smart_extract(workers=workers)
-        stats["smartextract"] = "ok"
-    except Exception as e:
-        log.error("Smart extract failed: %s", e)
-        console.print(f"  [red]Smart extract error:[/red] {e}")
-        stats["smartextract"] = f"error: {e}"
 
+    _step("ats", "Company career boards (Greenhouse/Lever/Ashby)", _ats)
+    _step("jobspy", "JobSpy full crawl", _jobspy)
+    _step("workday", "Workday corporate scraper", _workday)
+    _step("smartextract", "Smart extract (AI-powered scraping)", _smart)
     return stats
 
 
@@ -234,10 +239,6 @@ _PENDING_SQL: dict[str, str] = {
         "AND (cover_letter_path IS NULL OR cover_letter_path = '') "
         "AND COALESCE(cover_attempts, 0) < 5"
     ),
-    "pdf": (
-        "SELECT COUNT(*) FROM jobs WHERE tailored_resume_path IS NOT NULL "
-        "AND tailored_resume_path LIKE '%.txt'"
-    ),
 }
 
 # How long to sleep between polling loops in streaming mode (seconds)
@@ -278,6 +279,19 @@ def _run_stage_streaming(
         kwargs["workers"] = workers
 
     upstream = _UPSTREAM[stage]
+
+    if stage == "pdf":
+        # Converts only files without a PDF yet, so one pass after upstream is enough.
+        if upstream:
+            while not tracker.wait(upstream, timeout=_STREAM_POLL_INTERVAL):
+                if stop_event.is_set():
+                    break
+        try:
+            tracker.mark_done(stage, runner(**kwargs))
+        except Exception as e:
+            log.exception("Stage '%s' crashed", stage)
+            tracker.mark_done(stage, {"status": f"error: {e}"})
+        return
 
     if stage == "discover":
         # Discover runs once (its sub-scrapers already do their full crawl)

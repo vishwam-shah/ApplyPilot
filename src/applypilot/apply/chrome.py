@@ -124,6 +124,11 @@ def setup_worker_profile(worker_id: int) -> Path:
             source = candidate
             break
     if source is None:
+        if not config.clone_chrome_profile():
+            # Fresh, empty profile: no cookies or saved passwords from your
+            # everyday browser are exposed to the agent or to job sites.
+            (profile_dir / "Default").mkdir(parents=True, exist_ok=True)
+            return profile_dir
         source = config.get_chrome_user_data()
 
     logger.info("[worker-%d] Copying Chrome profile from %s (first time setup)...",
@@ -214,6 +219,7 @@ def launch_chrome(worker_id: int, port: int | None = None,
     cmd = [
         chrome_exe,
         f"--remote-debugging-port={port}",
+        "--remote-debugging-address=127.0.0.1",
         f"--user-data-dir={profile_dir}",
         "--profile-directory=Default",
         "--no-first-run",

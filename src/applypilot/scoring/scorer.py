@@ -34,6 +34,9 @@ IMPORTANT FACTORS:
 - Consider transferable experience (automation, scripting, API work)
 - Factor in the candidate's project experience
 - Be realistic about experience level vs. job requirements (years of experience, seniority)
+- WORK AUTHORIZATION IS A HARD GATE: if the job requires authorization the candidate does not have
+  (see CANDIDATE ELIGIBILITY) and the posting does not offer visa sponsorship or hiring from the
+  candidate's country, the score is 1 no matter how good the skills match is.
 
 RESPOND IN EXACTLY THIS FORMAT (no other text):
 SCORE: [1-10]
@@ -70,6 +73,22 @@ def _parse_score_response(response: str) -> dict:
     return {"score": score, "keywords": keywords, "reasoning": reasoning}
 
 
+def _eligibility_block() -> str:
+    """Candidate's work-authorization facts for the scorer, from the profile."""
+    try:
+        profile = load_profile()
+    except FileNotFoundError:
+        return ""
+    wa = profile.get("work_authorization", {})
+    country = profile.get("personal", {}).get("country", "")
+    countries = ", ".join(wa.get("authorized_countries") or ([country] if country else []))
+    if not countries:
+        return ""
+    reloc = profile.get("availability", {}).get("willing_to_relocate", "No")
+    return (f"CANDIDATE ELIGIBILITY: authorized to work only in {countries}. "
+            f"Willing to relocate within it: {reloc}.\n\n")
+
+
 def score_job(resume_text: str, job: dict) -> dict:
     """Score a single job against the resume.
 
@@ -82,14 +101,16 @@ def score_job(resume_text: str, job: dict) -> dict:
     """
     job_text = (
         f"TITLE: {job['title']}\n"
-        f"COMPANY: {job['site']}\n"
+        f"COMPANY: {job.get('company') or job['site']}\n"
         f"LOCATION: {job.get('location', 'N/A')}\n\n"
         f"DESCRIPTION:\n{(job.get('full_description') or '')[:6000]}"
     )
 
     messages = [
         {"role": "system", "content": SCORE_PROMPT},
-        {"role": "user", "content": f"RESUME:\n{resume_text}\n\n---\n\nJOB POSTING:\n{job_text}"},
+        {"role": "user", "content": (
+            f"{_eligibility_block()}RESUME:\n{resume_text}\n\n---\n\nJOB POSTING:\n{job_text}"
+        )},
     ]
 
     try:
@@ -144,6 +165,13 @@ def run_scoring(limit: int = 0, rescore: bool = False) -> dict:
 
         if result["score"] == 0:
             errors += 1
+        else:
+            conn.execute(
+                "UPDATE jobs SET fit_score = ?, score_reasoning = ?, scored_at = ? WHERE url = ?",
+                (result["score"], f"{result['keywords']}\n{result['reasoning']}",
+                 datetime.now(timezone.utc).isoformat(), result["url"]),
+            )
+            conn.commit()
 
         results.append(result)
 
@@ -151,15 +179,6 @@ def run_scoring(limit: int = 0, rescore: bool = False) -> dict:
             "[%d/%d] score=%d  %s",
             completed, len(jobs), result["score"], job.get("title", "?")[:60],
         )
-
-    # Write scores to DB
-    now = datetime.now(timezone.utc).isoformat()
-    for r in results:
-        conn.execute(
-            "UPDATE jobs SET fit_score = ?, score_reasoning = ?, scored_at = ? WHERE url = ?",
-            (r["score"], f"{r['keywords']}\n{r['reasoning']}", now, r["url"]),
-        )
-    conn.commit()
 
     elapsed = time.time() - t0
     log.info("Done: %d scored in %.1fs (%.1f jobs/sec)", len(results), elapsed, len(results) / elapsed if elapsed > 0 else 0)

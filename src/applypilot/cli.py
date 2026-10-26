@@ -147,7 +147,7 @@ def apply(
     limit: Optional[int] = typer.Option(None, "--limit", "-l", help="Max applications to submit."),
     workers: int = typer.Option(1, "--workers", "-w", help="Number of parallel browser workers."),
     min_score: int = typer.Option(7, "--min-score", help="Minimum fit score for job selection."),
-    model: str = typer.Option("haiku", "--model", "-m", help="Claude model name."),
+    model: str = typer.Option("sonnet", "--model", "-m", help="Claude model name."),
     continuous: bool = typer.Option(False, "--continuous", "-c", help="Run forever, polling for new jobs."),
     dry_run: bool = typer.Option(False, "--dry-run", help="Preview actions without submitting."),
     headless: bool = typer.Option(False, "--headless", help="Run browsers in headless mode."),
@@ -197,8 +197,13 @@ def apply(
         )
         raise typer.Exit(code=1)
 
-    # Check 3: Tailored resumes exist (skip for --gen with --url)
-    if not (gen and url):
+    # Check 3: Tailored resumes exist (skip for --gen with --url, or base-resume mode)
+    from applypilot.config import use_base_resume, RESUME_PDF_PATH
+    if use_base_resume():
+        if not RESUME_PDF_PATH.exists():
+            console.print(f"[red]Base resume not found:[/red] {RESUME_PDF_PATH}")
+            raise typer.Exit(code=1)
+    elif not (gen and url):
         conn = get_connection()
         ready = conn.execute(
             "SELECT COUNT(*) FROM jobs WHERE tailored_resume_path IS NOT NULL AND applied_at IS NULL"
@@ -224,9 +229,8 @@ def apply(
         console.print(f"[green]Wrote prompt to:[/green] {prompt_file}")
         console.print(f"\n[bold]Run manually:[/bold]")
         console.print(
-            f"  claude --model {model} -p "
-            f"--mcp-config {mcp_path} "
-            f"--permission-mode bypassPermissions < {prompt_file}"
+            f"  claude --model {model} -p --mcp-config {mcp_path} --strict-mcp-config "
+            f'--tools "" --allowedTools mcp__playwright --permission-mode dontAsk < {prompt_file}'
         )
         return
 
@@ -376,21 +380,17 @@ def doctor() -> None:
         results.append(("python-jobspy", ok_mark, "Job board scraping available"))
     except ImportError:
         results.append(("python-jobspy", warn_mark,
-                        "pip install --no-deps python-jobspy && pip install pydantic tls-client requests markdownify regex"))
+                        "pip install --no-deps python-jobspy && pip install pydantic tls-client requests markdownify regex curl_cffi"))
 
     # --- Tier 2 checks ---
     import os
-    has_gemini = bool(os.environ.get("GEMINI_API_KEY"))
-    has_openai = bool(os.environ.get("OPENAI_API_KEY"))
-    has_local = bool(os.environ.get("LLM_URL"))
-    if has_gemini:
-        model = os.environ.get("LLM_MODEL", "gemini-2.0-flash")
-        results.append(("LLM API key", ok_mark, f"Gemini ({model})"))
-    elif has_openai:
-        model = os.environ.get("LLM_MODEL", "gpt-4o-mini")
-        results.append(("LLM API key", ok_mark, f"OpenAI ({model})"))
-    elif has_local:
-        results.append(("LLM API key", ok_mark, f"Local: {os.environ.get('LLM_URL')}"))
+    try:
+        from applypilot.llm import _detect_providers
+        chain = _detect_providers()
+    except RuntimeError:
+        chain = []
+    if chain:
+        results.append(("LLM providers", ok_mark, " -> ".join(m for _, m, _ in chain)))
     else:
         results.append(("LLM API key", fail_mark,
                         "Set GEMINI_API_KEY in ~/.applypilot/.env (run 'applypilot init')"))
@@ -420,13 +420,12 @@ def doctor() -> None:
         results.append(("Node.js (npx)", fail_mark,
                         "Install Node.js 18+ from nodejs.org (needed for auto-apply)"))
 
-    # CapSolver (optional)
-    capsolver = os.environ.get("CAPSOLVER_API_KEY")
-    if capsolver:
-        results.append(("CapSolver API key", ok_mark, "CAPTCHA solving enabled"))
-    else:
-        results.append(("CapSolver API key", "[dim]optional[/dim]",
-                        "Set CAPSOLVER_API_KEY in .env for CAPTCHA solving"))
+    # Apply mode
+    from applypilot.config import submit_by_me, use_base_resume
+    results.append(("Final Submit", ok_mark,
+                    "you press it (APPLYPILOT_SUBMIT_BY_ME=1)" if submit_by_me() else "agent presses it"))
+    results.append(("Resume upload", ok_mark,
+                    f"base resume as-is: {RESUME_PDF_PATH}" if use_base_resume() else "per-job tailored PDF"))
 
     # --- Render results ---
     console.print()

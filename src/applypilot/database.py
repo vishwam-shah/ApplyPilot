@@ -180,6 +180,8 @@ _ALL_COLUMNS: dict[str, str] = {
     "apply_duration_ms": "INTEGER",
     "apply_task_id": "TEXT",
     "verification_confidence": "TEXT",
+    # Hiring company (``site`` is the board the job came from)
+    "company": "TEXT",
 }
 
 
@@ -316,11 +318,17 @@ def get_stats(conn: sqlite3.Connection | None = None) -> dict:
         "SELECT COUNT(*) FROM jobs WHERE apply_error IS NOT NULL"
     ).fetchone()[0]
 
+    from applypilot.config import use_base_resume
     stats["ready_to_apply"] = conn.execute(
         "SELECT COUNT(*) FROM jobs "
-        "WHERE tailored_resume_path IS NOT NULL "
-        "AND applied_at IS NULL "
-        "AND application_url IS NOT NULL"
+        "WHERE (tailored_resume_path IS NOT NULL OR ? = 1) "
+        "AND applied_at IS NULL AND fit_score >= 7 "
+        "AND (apply_status IS NULL OR apply_status = 'failed')",
+        (int(use_base_resume()),),
+    ).fetchone()[0]
+
+    stats["awaiting_submit"] = conn.execute(
+        "SELECT COUNT(*) FROM jobs WHERE apply_status = 'ready'"
     ).fetchone()[0]
 
     return stats

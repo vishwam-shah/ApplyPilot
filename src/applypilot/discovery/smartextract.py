@@ -29,7 +29,7 @@ from bs4 import BeautifulSoup
 from playwright.sync_api import sync_playwright
 
 from applypilot import config
-from applypilot.config import CONFIG_DIR
+from applypilot.config import config_file
 from applypilot.database import get_connection, init_db, store_jobs, get_stats
 from applypilot.llm import get_client
 
@@ -77,7 +77,7 @@ def _location_ok(location: str | None, accept: list[str], reject: list[str]) -> 
 
 def load_sites() -> list[dict]:
     """Load scraping target sites from config/sites.yaml."""
-    path = CONFIG_DIR / "sites.yaml"
+    path = config_file("sites.yaml")
     if not path.exists():
         log.warning("sites.yaml not found at %s", path)
         return []

@@ -9,6 +9,7 @@ is always code-injected, never LLM-generated. Each retry starts a fresh conversa
 to avoid apologetic spirals.
 """
 
+import hashlib
 import json
 import logging
 import re
@@ -493,7 +494,8 @@ def run_tailoring(min_score: int = 7, limit: int = 20,
             # Build safe filename prefix
             safe_title = re.sub(r"[^\w\s-]", "", job["title"])[:50].strip().replace(" ", "_")
             safe_site = re.sub(r"[^\w\s-]", "", job["site"])[:20].strip().replace(" ", "_")
-            prefix = f"{safe_site}_{safe_title}"
+            url_key = hashlib.sha1(job["url"].encode("utf-8")).hexdigest()[:8]
+            prefix = f"{safe_site}_{safe_title}_{url_key}"
 
             # Save tailored resume text
             txt_path = TAILORED_DIR / f"{prefix}.txt"

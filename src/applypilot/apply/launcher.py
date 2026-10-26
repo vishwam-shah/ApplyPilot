@@ -52,6 +52,7 @@ _stop_event = threading.Event()
 # Track active Claude Code processes for skip (Ctrl+C) handling
 _claude_procs: dict[int, subprocess.Popen] = {}
 _claude_lock = threading.Lock()
+_skip_requested: dict[int, bool] = {}
 
 # Register cleanup on exit
 atexit.register(cleanup_on_exit)
@@ -64,28 +65,87 @@ if platform.system() != "Windows":
 # ---------------------------------------------------------------------------
 
 def _make_mcp_config(cdp_port: int) -> dict:
-    """Build MCP config dict for a specific CDP port."""
-    return {
-        "mcpServers": {
-            "playwright": {
-                "command": "npx",
-                "args": [
-                    "@playwright/mcp@latest",
-                    f"--cdp-endpoint=http://localhost:{cdp_port}",
-                    f"--viewport-size={config.DEFAULTS['viewport']}",
-                ],
-            },
-            "gmail": {
-                "command": "npx",
-                "args": ["-y", "@gongrzhe/server-gmail-autoauth-mcp"],
-            },
-        }
+    """Build MCP config dict for a specific CDP port.
+
+    Playwright MCP is pinned so a compromised ``@latest`` release can't run on
+    your machine unnoticed. The Gmail server is a third-party package with full
+    mailbox access, so it is only added when APPLYPILOT_ENABLE_GMAIL=1.
+    """
+    # File uploads are limited to the worker directory (the session's root),
+    # so a malicious page can't get the agent to upload other local files.
+    servers = {
+        "playwright": _npx([
+            f"@playwright/mcp@{PLAYWRIGHT_MCP_VERSION}",
+            f"--cdp-endpoint=http://127.0.0.1:{cdp_port}",
+            f"--viewport-size={config.DEFAULTS['viewport']}",
+        ]),
     }
+    if _gmail_enabled():
+        servers["gmail"] = _npx([f"@gongrzhe/server-gmail-autoauth-mcp@{GMAIL_MCP_VERSION}"])
+    return {"mcpServers": servers}
+
+
+def _npx(args: list[str]) -> dict:
+    """MCP server entry for an npx package (Windows needs cmd /c to run npx.cmd)."""
+    if platform.system() == "Windows":
+        return {"command": "cmd", "args": ["/c", "npx", "-y", *args]}
+    return {"command": "npx", "args": ["-y", *args]}
+
+
+PLAYWRIGHT_MCP_VERSION = os.environ.get("APPLYPILOT_PLAYWRIGHT_MCP_VERSION", "0.0.83")
+GMAIL_MCP_VERSION = "1.1.11"
+
+# Gmail tools the agent may use (read-only search for verification codes).
+_GMAIL_READ_TOOLS = ("mcp__gmail__search_emails", "mcp__gmail__read_email")
+
+
+def _gmail_enabled() -> bool:
+    return os.environ.get("APPLYPILOT_ENABLE_GMAIL", "").strip() == "1"
+
+
+def _allowed_tools() -> str:
+    """Tools the apply agent may call. Everything else is denied.
+
+    The agent reads untrusted job pages, so a prompt injection on a page must
+    not be able to reach a shell, the file system, or the web outside the
+    browser. Only the Playwright browser tools (and, if enabled, read-only
+    Gmail) are allowed.
+    """
+    tools = ["mcp__playwright"]
+    if _gmail_enabled():
+        tools.extend(_GMAIL_READ_TOOLS)
+    return ",".join(tools)
 
 
 # ---------------------------------------------------------------------------
 # Database operations
 # ---------------------------------------------------------------------------
+
+def _use_base_resume() -> bool:
+    return config.use_base_resume()
+
+
+def _resume_text_for(job: dict) -> str:
+    """Resume text for the prompt: the tailored one, else the base resume."""
+    resume_path = job.get("tailored_resume_path")
+    if resume_path and not _use_base_resume():
+        txt_path = Path(resume_path).with_suffix(".txt")
+        if txt_path.exists():
+            return txt_path.read_text(encoding="utf-8")
+    if config.RESUME_PATH.exists():
+        return config.RESUME_PATH.read_text(encoding="utf-8")
+    return ""
+
+
+def release_stale_locks() -> int:
+    """Clear in_progress locks left behind by a crashed or killed run."""
+    conn = get_connection()
+    cur = conn.execute(
+        "UPDATE jobs SET apply_status = NULL, agent_id = NULL WHERE apply_status = 'in_progress'"
+    )
+    conn.commit()
+    return cur.rowcount
+
 
 def acquire_job(target_url: str | None = None, min_score: int = 7,
                 worker_id: int = 0) -> dict | None:
@@ -106,14 +166,15 @@ def acquire_job(target_url: str | None = None, min_score: int = 7,
         if target_url:
             like = f"%{target_url.split('?')[0].rstrip('/')}%"
             row = conn.execute("""
-                SELECT url, title, site, application_url, tailored_resume_path,
+                SELECT url, title, site, company, application_url, tailored_resume_path,
                        fit_score, location, full_description, cover_letter_path
                 FROM jobs
                 WHERE (url = ? OR application_url = ? OR application_url LIKE ? OR url LIKE ?)
-                  AND tailored_resume_path IS NOT NULL
-                  AND apply_status != 'in_progress'
+                  AND (tailored_resume_path IS NOT NULL OR ? = 1)
+                  AND (apply_status IS NULL
+                       OR apply_status NOT IN ('in_progress', 'applied', 'ready'))
                 LIMIT 1
-            """, (target_url, target_url, like, like)).fetchone()
+            """, (target_url, target_url, like, like, int(_use_base_resume()))).fetchone()
         else:
             blocked_sites, blocked_patterns = _load_blocked()
             # Build parameterized filters to avoid SQL injection
@@ -127,19 +188,28 @@ def acquire_job(target_url: str | None = None, min_score: int = 7,
             if blocked_patterns:
                 url_clauses = " ".join(f"AND url NOT LIKE ?" for _ in blocked_patterns)
                 params.extend(blocked_patterns)
+            # Home-market jobs first (e.g. India), then remote, then the rest.
+            home = config.home_patterns()
+            home_sql = " OR ".join("LOWER(COALESCE(location, '')) LIKE ?" for _ in home) or "0"
+            order_params = [f"%{h.lower()}%" for h in home]
+            params.extend(order_params)
             row = conn.execute(f"""
-                SELECT url, title, site, application_url, tailored_resume_path,
+                SELECT url, title, site, company, application_url, tailored_resume_path,
                        fit_score, location, full_description, cover_letter_path
                 FROM jobs
-                WHERE tailored_resume_path IS NOT NULL
+                WHERE (tailored_resume_path IS NOT NULL OR ? = 1)
+                  AND applied_at IS NULL
                   AND (apply_status IS NULL OR apply_status = 'failed')
                   AND (apply_attempts IS NULL OR apply_attempts < ?)
                   AND fit_score >= ?
                   {site_clause}
                   {url_clauses}
-                ORDER BY fit_score DESC, url
+                ORDER BY CASE WHEN {home_sql} THEN 0
+                              WHEN LOWER(COALESCE(location, '')) LIKE '%remote%' THEN 1
+                              ELSE 2 END,
+                         fit_score DESC, discovered_at DESC
                 LIMIT 1
-            """, [config.DEFAULTS["max_apply_attempts"]] + params).fetchone()
+            """, [int(_use_base_resume()), config.DEFAULTS["max_apply_attempts"]] + params).fetchone()
 
         if not row:
             conn.rollback()
@@ -155,7 +225,9 @@ def acquire_job(target_url: str | None = None, min_score: int = 7,
             )
             conn.commit()
             logger.info("Skipping manual ATS: %s", row["url"][:80])
-            return None
+            # Pick the next job instead of reporting an empty queue.
+            return acquire_job(target_url=target_url, min_score=min_score,
+                               worker_id=worker_id)
 
         now = datetime.now(timezone.utc).isoformat()
         conn.execute("""
@@ -221,14 +293,9 @@ def gen_prompt(target_url: str, min_score: int = 7,
     if not job:
         return None
 
-    # Read resume text
-    resume_path = job.get("tailored_resume_path")
-    txt_path = Path(resume_path).with_suffix(".txt") if resume_path else None
-    resume_text = ""
-    if txt_path and txt_path.exists():
-        resume_text = txt_path.read_text(encoding="utf-8")
-
-    prompt = prompt_mod.build_prompt(job=job, tailored_resume=resume_text)
+    prompt = prompt_mod.build_prompt(job=job, tailored_resume=_resume_text_for(job),
+                                     review_mode=config.submit_by_me(),
+                                     upload_dir=reset_worker_dir(worker_id))
 
     # Release the lock so the job stays available
     release_lock(job["url"])
@@ -303,42 +370,34 @@ def run_job(job: dict, port: int, worker_id: int = 0,
         'applied', 'expired', 'captcha', 'login_issue',
         'failed:reason', or 'skipped'.
     """
-    # Read tailored resume text
-    resume_path = job.get("tailored_resume_path")
-    txt_path = Path(resume_path).with_suffix(".txt") if resume_path else None
-    resume_text = ""
-    if txt_path and txt_path.exists():
-        resume_text = txt_path.read_text(encoding="utf-8")
+    resume_text = _resume_text_for(job)
+    worker_dir = reset_worker_dir(worker_id)
 
-    # Build the prompt
+    # Build the prompt (copies the upload files into worker_dir)
     agent_prompt = prompt_mod.build_prompt(
         job=job,
         tailored_resume=resume_text,
         dry_run=dry_run,
+        review_mode=config.submit_by_me(),
+        upload_dir=worker_dir,
     )
 
     # Write per-worker MCP config
     mcp_config_path = config.APP_DIR / f".mcp-apply-{worker_id}.json"
     mcp_config_path.write_text(json.dumps(_make_mcp_config(port)), encoding="utf-8")
 
-    # Build claude command
+    # Build claude command. No built-in tools (no Bash, file or web access),
+    # only the MCP servers in our config, and anything not allowed is denied.
     cmd = [
         "claude",
         "--model", model,
         "-p",
         "--mcp-config", str(mcp_config_path),
-        "--permission-mode", "bypassPermissions",
+        "--strict-mcp-config",
+        "--tools", "",
+        "--allowedTools", _allowed_tools(),
+        "--permission-mode", "dontAsk",
         "--no-session-persistence",
-        "--disallowedTools", (
-            "mcp__gmail__draft_email,mcp__gmail__modify_email,"
-            "mcp__gmail__delete_email,mcp__gmail__download_attachment,"
-            "mcp__gmail__batch_modify_emails,mcp__gmail__batch_delete_emails,"
-            "mcp__gmail__create_label,mcp__gmail__update_label,"
-            "mcp__gmail__delete_label,mcp__gmail__get_or_create_label,"
-            "mcp__gmail__list_email_labels,mcp__gmail__create_filter,"
-            "mcp__gmail__list_filters,mcp__gmail__get_filter,"
-            "mcp__gmail__delete_filter"
-        ),
         "--output-format", "stream-json",
         "--verbose", "-",
     ]
@@ -347,10 +406,8 @@ def run_job(job: dict, port: int, worker_id: int = 0,
     env.pop("CLAUDECODE", None)
     env.pop("CLAUDE_CODE_ENTRYPOINT", None)
 
-    worker_dir = reset_worker_dir(worker_id)
-
     update_state(worker_id, status="applying", job_title=job["title"],
-                 company=job.get("site", ""), score=job.get("fit_score", 0),
+                 company=job.get("company") or job.get("site", ""), score=job.get("fit_score", 0),
                  start_time=time.time(), actions=0, last_action="starting")
     add_event(f"[W{worker_id}] Starting: {job['title'][:40]} @ {job.get('site', '')}")
 
@@ -385,6 +442,18 @@ def run_job(job: dict, port: int, worker_id: int = 0,
 
         proc.stdin.write(agent_prompt)
         proc.stdin.close()
+
+        # Kill the agent if it runs past the timeout. Reading stdout blocks,
+        # so the timeout has to be enforced from another thread.
+        timed_out = threading.Event()
+
+        def _watchdog(p=proc):
+            if not _job_done.wait(timeout=config.DEFAULTS["apply_timeout"]):
+                timed_out.set()
+                _kill_process_tree(p.pid)
+
+        _job_done = threading.Event()
+        threading.Thread(target=_watchdog, daemon=True).start()
 
         text_parts: list[str] = []
         with open(worker_log, "a", encoding="utf-8") as lf:
@@ -441,11 +510,14 @@ def run_job(job: dict, port: int, worker_id: int = 0,
                     text_parts.append(line)
                     lf.write(line + "\n")
 
-        proc.wait(timeout=300)
+        proc.wait(timeout=30)
+        _job_done.set()
         returncode = proc.returncode
         proc = None
 
-        if returncode and returncode < 0:
+        if timed_out.is_set():
+            raise subprocess.TimeoutExpired(cmd, config.DEFAULTS["apply_timeout"])
+        if _skip_requested.pop(worker_id, False) or (returncode and returncode < 0):
             return "skipped", int((time.time() - start) * 1000)
 
         output = "\n".join(text_parts)
@@ -465,33 +537,22 @@ def run_job(job: dict, port: int, worker_id: int = 0,
         def _clean_reason(s: str) -> str:
             return re.sub(r'[*`"]+$', '', s).strip()
 
-        for result_status in ["APPLIED", "EXPIRED", "CAPTCHA", "LOGIN_ISSUE"]:
-            if f"RESULT:{result_status}" in output:
-                add_event(f"[W{worker_id}] {result_status} ({elapsed}s): {job['title'][:30]}")
-                update_state(worker_id, status=result_status.lower(),
-                             last_action=f"{result_status} ({elapsed}s)")
-                return result_status.lower(), duration_ms
-
-        if "RESULT:FAILED" in output:
-            for out_line in output.split("\n"):
-                if "RESULT:FAILED" in out_line:
-                    reason = (
-                        out_line.split("RESULT:FAILED:")[-1].strip()
-                        if ":" in out_line[out_line.index("FAILED") + 6:]
-                        else "unknown"
-                    )
-                    reason = _clean_reason(reason)
-                    PROMOTE_TO_STATUS = {"captcha", "expired", "login_issue"}
-                    if reason in PROMOTE_TO_STATUS:
-                        add_event(f"[W{worker_id}] {reason.upper()} ({elapsed}s): {job['title'][:30]}")
-                        update_state(worker_id, status=reason,
-                                     last_action=f"{reason.upper()} ({elapsed}s)")
-                        return reason, duration_ms
-                    add_event(f"[W{worker_id}] FAILED ({elapsed}s): {reason[:30]}")
-                    update_state(worker_id, status="failed",
-                                 last_action=f"FAILED: {reason[:25]}")
-                    return f"failed:{reason}", duration_ms
-            return "failed:unknown", duration_ms
+        matches = re.findall(r"RESULT:([A-Z_]+)(?::([\w\-]+))?", output)
+        if matches:
+            code, reason = matches[-1]
+            if code == "FAILED":
+                reason = _clean_reason(reason) or "unknown"
+                if reason in {"captcha", "expired", "login_issue"}:
+                    code, reason = reason.upper(), ""
+            if code in ("APPLIED", "READY", "EXPIRED", "CAPTCHA", "LOGIN_ISSUE"):
+                add_event(f"[W{worker_id}] {code} ({elapsed}s): {job['title'][:30]}")
+                update_state(worker_id, status=code.lower(),
+                             last_action=f"{code} ({elapsed}s)")
+                return code.lower(), duration_ms
+            add_event(f"[W{worker_id}] FAILED ({elapsed}s): {reason[:30]}")
+            update_state(worker_id, status="failed",
+                         last_action=f"FAILED: {reason[:25]}")
+            return f"failed:{reason}", duration_ms
 
         add_event(f"[W{worker_id}] NO RESULT ({elapsed}s)")
         update_state(worker_id, status="failed", last_action=f"no result ({elapsed}s)")
@@ -509,10 +570,46 @@ def run_job(job: dict, port: int, worker_id: int = 0,
         update_state(worker_id, status="failed", last_action=f"ERROR: {str(e)[:25]}")
         return f"failed:{str(e)[:100]}", duration_ms
     finally:
+        if "_job_done" in locals():
+            _job_done.set()
         with _claude_lock:
             _claude_procs.pop(worker_id, None)
         if proc is not None and proc.poll() is None:
             _kill_process_tree(proc.pid)
+
+
+_CONFIRM_RE = re.compile(
+    r"thank(s| you)( for (applying|your (application|interest)))?|application (was )?"
+    r"(received|submitted|sent|complete)|successfully (applied|submitted)|confirmation",
+    re.I,
+)
+
+
+def _wait_for_user_submit(port: int, chrome_proc, max_wait: int = 1800) -> bool:
+    """Wait until a confirmation page appears or the user closes Chrome.
+
+    Polls the DevTools tab list (titles and URLs only, nothing leaves the
+    machine). Returns True once any tab looks like a submission confirmation.
+    """
+    import urllib.request
+
+    deadline = time.time() + max_wait
+    while time.time() < deadline and not _stop_event.is_set():
+        if chrome_proc is not None and chrome_proc.poll() is not None:
+            return False
+        try:
+            with urllib.request.urlopen(f"http://127.0.0.1:{port}/json", timeout=5) as r:
+                tabs = json.loads(r.read())
+        except Exception:
+            return False  # browser closed
+        pages = [t for t in tabs if t.get("type") == "page"]
+        if not pages:
+            return False
+        for t in pages:
+            if _CONFIRM_RE.search(f"{t.get('title', '')} {t.get('url', '')}"):
+                return True
+        _stop_event.wait(3)
+    return False
 
 
 # ---------------------------------------------------------------------------
@@ -599,7 +696,8 @@ def worker_loop(worker_id: int = 0, limit: int = 1,
         chrome_proc = None
         try:
             add_event(f"[W{worker_id}] Launching Chrome...")
-            chrome_proc = launch_chrome(worker_id, port=port, headless=headless)
+            chrome_proc = launch_chrome(worker_id, port=port,
+                                        headless=headless and not config.submit_by_me())
 
             result, duration_ms = run_job(job, port=port, worker_id=worker_id,
                                             model=model, dry_run=dry_run)
@@ -611,6 +709,22 @@ def worker_loop(worker_id: int = 0, limit: int = 1,
             elif result == "applied":
                 mark_result(job["url"], "applied", duration_ms=duration_ms)
                 applied += 1
+                update_state(worker_id, jobs_applied=applied,
+                             jobs_done=applied + failed)
+            elif result == "ready":
+                # Form is filled. Leave Chrome open for the user to review
+                # and press Submit, and watch for the confirmation page.
+                mark_result(job["url"], "ready", "waiting for you to submit",
+                            duration_ms=duration_ms)
+                add_event(f"[W{worker_id}] READY: submit it in the Chrome window, then close it")
+                update_state(worker_id, status="ready", last_action="waiting for your Submit")
+                if _wait_for_user_submit(port, chrome_proc):
+                    mark_result(job["url"], "applied", duration_ms=duration_ms)
+                    applied += 1
+                    add_event(f"[W{worker_id}] Submitted: {job['title'][:30]}")
+                else:
+                    add_event(f"[W{worker_id}] Closed without confirmation; still 'ready' "
+                              f"(use --mark-applied if you did submit)")
                 update_state(worker_id, jobs_applied=applied,
                              jobs_done=applied + failed)
             else:
@@ -674,6 +788,10 @@ def main(limit: int = 1, target_url: str | None = None,
     config.ensure_dirs()
     console = Console()
 
+    stale = release_stale_locks()
+    if stale:
+        console.print(f"[dim]Released {stale} stale in_progress lock(s) from a previous run.[/dim]")
+
     if continuous:
         effective_limit = 0
         mode_label = "continuous"
@@ -701,6 +819,7 @@ def main(limit: int = 1, target_url: str | None = None,
             with _claude_lock:
                 for wid, cproc in list(_claude_procs.items()):
                     if cproc.poll() is None:
+                        _skip_requested[wid] = True
                         _kill_process_tree(cproc.pid)
         else:
             console.print("\n[red bold]STOPPING[/red bold]")

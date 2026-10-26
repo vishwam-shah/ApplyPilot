@@ -20,7 +20,7 @@ from html.parser import HTMLParser
 import yaml
 
 from applypilot import config
-from applypilot.config import CONFIG_DIR
+from applypilot.config import config_file
 from applypilot.database import get_connection, init_db
 
 log = logging.getLogger(__name__)
@@ -30,7 +30,7 @@ log = logging.getLogger(__name__)
 
 def load_employers() -> dict:
     """Load Workday employer registry from config/employers.yaml."""
-    path = CONFIG_DIR / "employers.yaml"
+    path = config_file("employers.yaml")
     if not path.exists():
         log.warning("employers.yaml not found at %s", path)
         return {}
@@ -44,31 +44,12 @@ def _load_location_filter(search_cfg: dict | None = None):
     """Load location accept/reject lists from search config."""
     if search_cfg is None:
         search_cfg = config.load_search_config()
-
-    accept = search_cfg.get("location_accept", [])
-    reject = search_cfg.get("location_reject_non_remote", [])
-    return accept, reject
+    return config.location_filters(search_cfg)
 
 
 def _location_ok(location: str | None, accept: list[str], reject: list[str]) -> bool:
     """Check if a job location passes the user's location filter."""
-    if not location:
-        return True
-
-    loc = location.lower()
-
-    if any(r in loc for r in ("remote", "anywhere", "work from home", "wfh", "distributed")):
-        return True
-
-    for r in reject:
-        if r.lower() in loc:
-            return False
-
-    for a in accept:
-        if a.lower() in loc:
-            return True
-
-    return False
+    return config.location_ok(location, accept, reject)
 
 
 # -- HTML stripper -----------------------------------------------------------
@@ -102,6 +83,7 @@ class _HTMLStripper(HTMLParser):
         text = re.sub(r"[^\S\n]+", " ", text)
         text = re.sub(r"\n{3,}", "\n\n", text)
         return text.strip()
+
 
 
 def strip_html(html: str) -> str:

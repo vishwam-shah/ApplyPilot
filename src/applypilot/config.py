@@ -110,16 +110,88 @@ def load_search_config() -> dict:
         if example.exists():
             return yaml.safe_load(example.read_text(encoding="utf-8"))
         return {}
-    return yaml.safe_load(SEARCH_CONFIG_PATH.read_text(encoding="utf-8"))
+    return yaml.safe_load(SEARCH_CONFIG_PATH.read_text(encoding="utf-8")) or {}
+
+
+def config_file(name: str) -> Path:
+    """Path to a registry YAML: the user's copy in APP_DIR wins over the shipped one."""
+    user_copy = APP_DIR / name
+    return user_copy if user_copy.exists() else CONFIG_DIR / name
+
+
+_sites_cache: dict | None = None
+
+
+def location_filters(search_cfg: dict) -> tuple[list[str], list[str]]:
+    """Accept/reject location patterns from searches.yaml.
+
+    Reads the documented ``location: {accept_patterns, reject_patterns}``
+    block, and the older top-level ``location_accept`` /
+    ``location_reject_non_remote`` keys the code used to read exclusively.
+    """
+    loc = search_cfg.get("location") or {}
+    accept = list(loc.get("accept_patterns") or []) + list(search_cfg.get("location_accept") or [])
+    reject = list(loc.get("reject_patterns") or []) + list(search_cfg.get("location_reject_non_remote") or [])
+    return accept, reject
+
+
+def home_patterns(search_cfg: dict | None = None) -> list[str]:
+    """Location patterns that count as the candidate's home market (applied to first)."""
+    if search_cfg is None:
+        search_cfg = load_search_config()
+    loc = search_cfg.get("location") or {}
+    pats = list(loc.get("home_patterns") or [])
+    if not pats and search_cfg.get("country"):
+        pats = [str(search_cfg["country"])]
+    return pats
+
+
+def _pattern_in(pattern: str, text: str) -> bool:
+    """Whole-word, case-insensitive match ("CA" must not match "Chicago")."""
+    import re
+    return re.search(rf"(?<![a-z0-9]){re.escape(pattern.lower())}(?![a-z0-9])", text) is not None
+
+
+_REMOTE_WORDS = ("remote", "anywhere", "work from home", "wfh", "distributed")
+
+
+def location_ok(location: str | None, accept: list[str], reject: list[str]) -> bool:
+    """Check a job location against the user's accept/reject patterns.
+
+    Unknown locations are kept (the scorer decides). Reject patterns win.
+    With no accept patterns configured, anything not rejected passes.
+    Otherwise the location must name an accepted place; a remote job that
+    names no place at all ("Remote", "Remote, Global") also passes, but
+    "San Francisco (Remote)" or "Remote US" does not, since those are
+    usually limited to that country.
+    """
+    import re
+    if not location:
+        return True
+    loc = location.lower()
+    if any(_pattern_in(r, loc) for r in reject):
+        return False
+    if not accept or any(_pattern_in(a, loc) for a in accept):
+        return True
+    if any(w in loc for w in _REMOTE_WORDS):
+        rest = loc
+        for w in _REMOTE_WORDS + ("global", "worldwide", "first", "friendly", "only", "or", "and"):
+            rest = rest.replace(w, " ")
+        return not re.sub(r"[\W_\d]+", "", rest)
+    return False
 
 
 def load_sites_config() -> dict:
     """Load sites.yaml configuration (sites list, manual_ats, blocked, etc.)."""
+    global _sites_cache
+    if _sites_cache is not None:
+        return _sites_cache
     import yaml
-    path = CONFIG_DIR / "sites.yaml"
+    path = config_file("sites.yaml")
     if not path.exists():
         return {}
-    return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    _sites_cache = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    return _sites_cache
 
 
 def is_manual_ats(url: str | None) -> bool:
@@ -166,9 +238,31 @@ DEFAULTS = {
     "max_apply_attempts": 3,
     "max_tailor_attempts": 5,
     "poll_interval": 60,
-    "apply_timeout": 300,
+    "apply_timeout": int(os.environ.get("APPLYPILOT_APPLY_TIMEOUT", "600")),
     "viewport": "1280x900",
 }
+
+
+def _flag(name: str, default: str = "0") -> bool:
+    return os.environ.get(name, default).strip().lower() in ("1", "true", "yes", "on")
+
+
+def use_base_resume() -> bool:
+    """Upload resume.pdf as-is instead of a per-job tailored resume."""
+    return _flag("APPLYPILOT_USE_BASE_RESUME")
+
+
+def submit_by_me() -> bool:
+    """Agent fills the form but leaves the final Submit click to the user."""
+    return _flag("APPLYPILOT_SUBMIT_BY_ME", "1")
+
+
+def clone_chrome_profile() -> bool:
+    """Copy the user's real Chrome profile (cookies, logins) into workers. Off by default."""
+    return _flag("APPLYPILOT_CLONE_CHROME_PROFILE")
+
+
+LLM_KEY_VARS = ("GEMINI_API_KEY", "OPENAI_API_KEY", "NVIDIA_API_KEY", "GROQ_API_KEY", "LLM_URL")
 
 
 def load_env():
@@ -206,7 +300,7 @@ def get_tier() -> int:
     """
     load_env()
 
-    has_llm = any(os.environ.get(k) for k in ("GEMINI_API_KEY", "OPENAI_API_KEY", "LLM_URL"))
+    has_llm = any(os.environ.get(k) for k in LLM_KEY_VARS)
     if not has_llm:
         return 1
 
@@ -238,7 +332,7 @@ def check_tier(required: int, feature: str) -> None:
     _console = Console(stderr=True)
 
     missing: list[str] = []
-    if required >= 2 and not any(os.environ.get(k) for k in ("GEMINI_API_KEY", "OPENAI_API_KEY", "LLM_URL")):
+    if required >= 2 and not any(os.environ.get(k) for k in LLM_KEY_VARS):
         missing.append("LLM API key — run [bold]applypilot init[/bold] or set GEMINI_API_KEY")
     if required >= 3:
         if not shutil.which("claude"):
