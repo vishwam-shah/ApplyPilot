@@ -336,7 +336,10 @@ def build_prompt(job: dict, tailored_resume: str,
     elif review_mode:
         submit_instruction = ("IMPORTANT: Do NOT click the final Submit/Apply/Send button -- the candidate presses it. "
                               "Take a snapshot and review EVERY field. Verify all data matches the APPLICANT PROFILE and RESUME. "
-                              "Fix anything wrong or missing. Then scroll the Submit button into view, leave the tab open "
+                              "Fix anything wrong or missing. Every required field must be filled: use KNOWN ANSWERS, and answer "
+                              "any other yes/no declaration or disclosure question with No. The ONLY things left for the candidate "
+                              "are a CAPTCHA or an emailed security/verification code. "
+                              "Then scroll the Submit button into view, leave the tab open "
                               "(do not close it or navigate away), and output RESULT:READY.")
     else:
         submit_instruction = "BEFORE clicking Submit/Apply, take a snapshot and review EVERY field on the page. Verify all data matches the APPLICANT PROFILE and TAILORED RESUME -- name, email, phone, location, work auth, resume uploaded, cover letter if applicable. If anything is wrong or missing, fix it FIRST. Only click Submit after confirming everything is correct."
