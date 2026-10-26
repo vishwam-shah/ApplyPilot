@@ -585,30 +585,64 @@ _CONFIRM_RE = re.compile(
 )
 
 
-def _wait_for_user_submit(port: int, chrome_proc, max_wait: int = 1800) -> bool:
-    """Wait until a confirmation page appears or the user closes Chrome.
+_CONFIRM_TEXT_RE = re.compile(
+    r"thank(s| you) for (applying|your application|submitting)|application (has been |was )?"
+    r"(submitted|received|sent)|we('ve| have) received your application|successfully (applied|submitted)",
+    re.I,
+)
 
-    Polls the DevTools tab list (titles and URLs only, nothing leaves the
-    machine). Returns True once any tab looks like a submission confirmation.
+
+def _confirmation_hits(pages) -> set[str]:
+    """Confirmation phrases currently visible across open pages."""
+    hits: set[str] = set()
+    for page in pages:
+        try:
+            text = page.evaluate("() => document.body ? document.body.innerText : ''") or ""
+        except Exception:
+            continue
+        hits.update(m.group(0).lower() for m in _CONFIRM_TEXT_RE.finditer(text))
+        title_url = f"{page.url} "
+        try:
+            title_url += page.title()
+        except Exception:
+            pass
+        hits.update(f"title:{m.group(0).lower()}" for m in _CONFIRM_RE.finditer(title_url))
+    return hits
+
+
+def _wait_for_user_submit(port: int, chrome_proc, max_wait: int = 1800) -> bool:
+    """Wait until a confirmation appears or the user closes Chrome.
+
+    Reads the open pages' text over the local DevTools port (nothing leaves
+    the machine). Some ATSs (Ashby) show "Application submitted" in place
+    without changing the title or URL, so page text is checked, and only
+    phrases that were NOT already on the page when the form was handed over
+    count, so a form header like "Thank you for your interest" can't trigger it.
     """
-    import urllib.request
+    from playwright.sync_api import sync_playwright
 
     deadline = time.time() + max_wait
-    while time.time() < deadline and not _stop_event.is_set():
-        if chrome_proc is not None and chrome_proc.poll() is not None:
-            return False
-        try:
-            with urllib.request.urlopen(f"http://127.0.0.1:{port}/json", timeout=5) as r:
-                tabs = json.loads(r.read())
-        except Exception:
-            return False  # browser closed
-        pages = [t for t in tabs if t.get("type") == "page"]
-        if not pages:
-            return False
-        for t in pages:
-            if _CONFIRM_RE.search(f"{t.get('title', '')} {t.get('url', '')}"):
-                return True
-        _stop_event.wait(3)
+    try:
+        with sync_playwright() as pw:
+            browser = pw.chromium.connect_over_cdp(f"http://127.0.0.1:{port}", timeout=10000)
+
+            def pages():
+                return [pg for ctx in browser.contexts for pg in ctx.pages]
+
+            baseline = _confirmation_hits(pages())
+            while time.time() < deadline and not _stop_event.is_set():
+                if chrome_proc is not None and chrome_proc.poll() is not None:
+                    return False
+                if not browser.is_connected():
+                    return False
+                current = pages()
+                if not current:
+                    return False
+                if _confirmation_hits(current) - baseline:
+                    return True
+                _stop_event.wait(1)
+    except Exception:
+        logger.debug("Confirmation watch ended", exc_info=True)
     return False
 
 
