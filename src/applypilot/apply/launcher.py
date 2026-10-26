@@ -936,7 +936,7 @@ def main(limit: int = 1, target_url: str | None = None,
         totals = get_totals()
         console.print(
             f"\n[bold]Done: {total_applied} applied, {total_failed} failed "
-            f"(${totals['cost']:.3f})[/bold]"
+            f"(~${totals['cost']:.3f} API-equivalent; on a claude.ai plan this uses plan limits, not money)[/bold]"
         )
         console.print(f"Logs: {config.LOG_DIR}")
 

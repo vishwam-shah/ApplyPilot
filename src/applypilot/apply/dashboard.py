@@ -121,7 +121,7 @@ def render_dashboard() -> Table:
     table.add_column("Last Action", min_width=20, max_width=35, no_wrap=True)
     table.add_column("OK", width=4, justify="right", style="green")
     table.add_column("Fail", width=4, justify="right", style="red")
-    table.add_column("Cost", width=8, justify="right")
+    table.add_column("API eq.", width=8, justify="right")
 
     with _lock:
         states = sorted(_worker_states.values(), key=lambda s: s.worker_id)
