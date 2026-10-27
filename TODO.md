@@ -39,7 +39,35 @@ job-apply-agent bugs to fix in the merge:
 - [ ] profile.salary_bands still USD placeholders
 
 ## 2. Discovery: latest openings, startups first
-- [ ] Startup registry per city (research: `research_*.json`, verified against live ATS APIs)
+
+Research done 2026-10-27, saved in `research/india_registry.json`: 211 companies across the 7 cities,
+sorted by city, then startup -> scaleup -> large. Checked against live job-board APIs: 134 boards are
+reachable, and 130 of them have open engineering roles in India (1,557 roles in total, 189 of them at
+39 startups).
+- Coverage by ATS: Greenhouse 57 (mostly foreign companies' India offices), custom 42 (11 of them
+  Workday), Keka 30, Ashby 18 (AI startups), Lever 17, Darwinbox 13, SmartRecruiters 12, Zoho 10,
+  Freshteam 9
+- Keka is the main ATS for small Indian startups. Public API:
+  `https://<slug>.keka.com/careers/api/jobs/default/active`, and `/careers/api/organization/default/careerportalinfo`
+  for the company name. A 403 means the board exists but is switched off. Build this connector first.
+- Darwinbox (Zepto, Delhivery, MobiKwik, 1mg, CarDekho, Spinny, BharatPe, upGrad, PW, Porter): only
+  renders in a browser and shows mostly non-tech roles. Needs a headless-browser pass.
+- Pages that only load in a browser: Juspay, Postman, Setu, Whatfix, Chargebee, Atlan, MoEngage, Zepto,
+  plus Kula (CleverTap), TurboHire (Purplle, IDfy), SuccessFactors (PayU), ZappyHire (Credgenics).
+- Slugs can't be guessed: Innovaccer = workable `innovaccer-analytics`, WebEngage = keka `webklipper`,
+  Spinny = `spinzone`, Spyne = `spyneai`. Wrong same-name boards: greenhouse `slice` (Balkans),
+  greenhouse `stage`, `shipsy.keka.com`. Dream Sports' Lever board no longer exists. Groww uses the
+  EU-hosted Greenhouse (`job-boards.eu.greenhouse.io`), which needs a different API host.
+- Workable rate-limits (429) if you check many accounts in a row: add pacing.
+- 41 entries have no slug and about 15 are "weak evidence" (portal found, no tech roles visible).
+  Re-check these with the browser pass.
+- Naukri 24h harvest: 1,278 postings from 467 companies, but only 100 have a direct careers URL, mostly
+  large companies. Good as a fresh-postings feed, poor for finding startups. LinkedIn guest search
+  returns 429 after a few queries.
+
+- [ ] Load `research/india_registry.json` into the merged sources (startup-first per city)
+- [ ] Keka connector (public API above), then Zoho Recruit, Freshteam, Workday (11 tenants in registry)
+- [ ] Headless-browser connector for Darwinbox and custom pages
 - [ ] Startup-first ranking: funded/YC/recent-raise flag boosts the queue after the India check
 - [ ] "Fresh" feed: Naukri + LinkedIn guest listing via JobSpy, `hours_old=24`, all 7 cities
       (both tested 2026-10-27 and returned postings from the last 24 hours)

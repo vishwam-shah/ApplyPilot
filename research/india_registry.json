@@ -1,0 +1,2936 @@
+[
+ {
+  "company": "Emergent",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "greenhouse",
+  "slug": "emergentlabsinc",
+  "careers_url": "https://job-boards.greenhouse.io/emergentlabsinc",
+  "verified": "ok",
+  "total_jobs": 47,
+  "eng_india_jobs": 15,
+  "sample": [
+   "AI Analyst - Business Analytics and Product Intelligence | Bangalore ",
+   "AI Filmmaker | Bengaluru",
+   "Engineering Manager  | Bangalore"
+  ],
+  "evidence": "42 open Bangalore roles (16 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/emergentlabsinc/jobs checked 2026-10-27; e.g. AI Analyst - Business Analytics and Product Intelligence; AI Filmmaker"
+ },
+ {
+  "company": "Ema",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "ema",
+  "careers_url": "https://jobs.ashbyhq.com/ema",
+  "verified": "ok",
+  "total_jobs": 39,
+  "eng_india_jobs": 14,
+  "sample": [
+   " Devops Engineer | Bengaluru office",
+   "Software Engineer, Machine Learning | Bengaluru office",
+   "Software Engineer, Backend - India | Bengaluru office"
+  ],
+  "evidence": "14 open Bangalore roles (11 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/ema checked 2026-10-27; e.g. Solutions Architect; Devops Engineer"
+ },
+ {
+  "company": "Eloelo",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "eloelo",
+  "careers_url": "https://eloelo.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 39,
+  "eng_india_jobs": 13,
+  "sample": [
+   "AI-Enabled Promo Producer | Bengaluru ",
+   "AI-Enabled Creative Producer | Bengaluru ",
+   "Data Scientist | India"
+  ],
+  "evidence": "23 open Bangalore roles (6 eng/tech) on live keka board API https://eloelo.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. AI-Enabled Promo Producer; AI-Enabled Creative Producer"
+ },
+ {
+  "company": "Intangles",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "intangles",
+  "careers_url": "https://intangles.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 27,
+  "eng_india_jobs": 13,
+  "sample": [
+   "Inward Quality Engineer (IQC) | Pune ",
+   "Backend Developer | Pune ",
+   "Associate Hardware Design Engineer | Pune "
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live keka board API https://intangles.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Field Engineer"
+ },
+ {
+  "company": "Neuron7",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "lever",
+  "slug": "neuron7",
+  "careers_url": "https://jobs.lever.co/neuron7",
+  "verified": "ok",
+  "total_jobs": 17,
+  "eng_india_jobs": 12,
+  "sample": [
+   "Build & Release Engineering | Bengaluru",
+   "Frontend - Apprentice | Bengaluru",
+   "Frontend Engineer | Bengaluru"
+  ],
+  "evidence": "12 open Bangalore roles (11 eng/tech) on live lever board API https://api.lever.co/v0/postings/neuron7?mode=json checked 2026-10-27; e.g. Build & Release Engineering; Frontend - Apprentice"
+ },
+ {
+  "company": "Zluri",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "zluri",
+  "careers_url": "https://zluri.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 12,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Technical Support Engineer | India",
+   "Engineering Manager | India",
+   "Technical Product Manager- Data Engineering | India"
+  ],
+  "evidence": "3 open Bangalore roles (2 eng/tech) on live keka board API https://zluri.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Senior Data Engineer; Senior Software Engineer (Backend)"
+ },
+ {
+  "company": "Bureau",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "bureau",
+  "careers_url": "https://jobs.ashbyhq.com/bureau",
+  "verified": "ok",
+  "total_jobs": 19,
+  "eng_india_jobs": 7,
+  "sample": [
+   "Senior Android Engineer | Bangalore",
+   "Information Security Engineer   | Bangalore",
+   "Data Engineer | Bangalore"
+  ],
+  "evidence": "17 open Bangalore roles (7 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/bureau checked 2026-10-27; e.g. Senior Android Engineer; Information Security Engineer"
+ },
+ {
+  "company": "CynLr",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "cynlr",
+  "careers_url": "https://jobs.ashbyhq.com/cynlr",
+  "verified": "ok",
+  "total_jobs": 40,
+  "eng_india_jobs": 7,
+  "sample": [
+   "Software Engineering Roles | Bengaluru",
+   "Embedded Systems Engineering - Product Design / FPGA | Bengaluru",
+   "PCB Design Engineer - Product Design | Bengaluru"
+  ],
+  "evidence": "32 open Bangalore roles (7 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/cynlr checked 2026-10-27; e.g. Software Engineering Roles; Embedded Systems Engineering - Product Design / FPGA"
+ },
+ {
+  "company": "Truefoundry",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "greenhouse",
+  "slug": "truefoundry",
+  "careers_url": "https://job-boards.greenhouse.io/truefoundry",
+  "verified": "ok",
+  "total_jobs": 23,
+  "eng_india_jobs": 7,
+  "sample": [
+   "Forward Deployed Engineer GTM | Bengaluru",
+   "Founding Support Engineer | Bangalore",
+   "Senior AI/ML Engineer: LLM & Agent Stack | Bengaluru, KA "
+  ],
+  "evidence": "13 open Bangalore roles (7 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/truefoundry/jobs checked 2026-10-27; e.g. Forward Deployed Engineer GTM; Founding Support Engineer"
+ },
+ {
+  "company": "Skit.ai",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "skit",
+  "careers_url": "https://skit.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 12,
+  "eng_india_jobs": 6,
+  "sample": [
+   "Lead DevOps Engineer | Bangalore ",
+   "Senior Site Reliability Engineer — Voice AI Platform | Bangalore ",
+   "Site Reliability Engineer — Multi-Cloud Infrastructure | Bangalore "
+  ],
+  "evidence": "11 open Bangalore roles (6 eng/tech) on live keka board API https://skit.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Lead DevOps Engineer; Senior Site Reliability Engineer — Voice AI Platform"
+ },
+ {
+  "company": "Kuku FM",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "kukufm",
+  "careers_url": "https://kukufm.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 15,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Creative Producer - AI show runner | Mumbai ",
+   "Promo Producer - AI & Performance Promos - Hindi & English | India",
+   "Promo Producer - AI & Performance Promos - Ttmk | India"
+  ],
+  "evidence": "6 open Bangalore roles (1 eng/tech) on live keka board API https://kukufm.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Promo Producer - AI & Performance Promos - Hindi & English"
+ },
+ {
+  "company": "Composio",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "composio",
+  "careers_url": "https://jobs.ashbyhq.com/composio",
+  "verified": "ok",
+  "total_jobs": 30,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Member of Technical Staff - Enterprise Platform | Bangalore",
+   "Technical Support Engineer | Remote (US: PST or EST)",
+   "Member Technical Staff - Applied AI Engineer (US Timing)  | Bangalore"
+  ],
+  "evidence": "3 open Bangalore roles (2 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/composio checked 2026-10-27; e.g. Member of Technical Staff - Enterprise Platform; Member Technical Staff - Applied AI Engineer (US Timing)"
+ },
+ {
+  "company": "Gushwork",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "lever",
+  "slug": "gushwork",
+  "careers_url": "https://jobs.lever.co/gushwork",
+  "verified": "ok",
+  "total_jobs": 11,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Forward Deployed Engineer | Bengaluru",
+   "SDE 2/3 (Backend) | Bengaluru",
+   "SDE 2/3 (Full Stack) | Bengaluru"
+  ],
+  "evidence": "7 open Bangalore roles (3 eng/tech) on live lever board API https://api.lever.co/v0/postings/gushwork?mode=json checked 2026-10-27; e.g. Forward Deployed Engineer; SDE 2/3 (Backend)"
+ },
+ {
+  "company": "Testsigma",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "testsigma",
+  "careers_url": "https://testsigma.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 3,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Solution Engineer | India",
+   "Backend Engineer | Bengaluru ",
+   "Engineering Manager | Bengaluru "
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live keka board API https://testsigma.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Backend Engineer; Engineering Manager"
+ },
+ {
+  "company": "CloudSEK",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "greenhouse",
+  "slug": "cloudsek",
+  "careers_url": "https://job-boards.greenhouse.io/cloudsek",
+  "verified": "ok",
+  "total_jobs": 17,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Salesforce Developer | Bengaluru, Karnataka, India",
+   "SDE - 3 - Frontend | Bengaluru, Karnataka, India"
+  ],
+  "evidence": "13 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/cloudsek/jobs checked 2026-10-27; e.g. Salesforce Developer; SDE - 3 - Frontend"
+ },
+ {
+  "company": "SpotDraft",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "spotdraft",
+  "careers_url": "https://jobs.ashbyhq.com/spotdraft",
+  "verified": "ok",
+  "total_jobs": 13,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Software Development Engineer III | Backend | SpotDraft HQ, Bengaluru",
+   "Product Manager - AI | SpotDraft HQ, Bengaluru"
+  ],
+  "evidence": "9 open Bangalore roles (2 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/spotdraft checked 2026-10-27; e.g. Software Development Engineer III | Backend; Product Manager - AI"
+ },
+ {
+  "company": "Bolna",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "bolna",
+  "careers_url": "https://jobs.ashbyhq.com/bolna",
+  "verified": "ok",
+  "total_jobs": 7,
+  "eng_india_jobs": 1,
+  "sample": [
+   "AI Solutions Engineer | Bengaluru"
+  ],
+  "evidence": "6 open Bangalore roles (1 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/bolna checked 2026-10-27; e.g. AI Solutions Engineer"
+ },
+ {
+  "company": "Chalo",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "chalo",
+  "careers_url": "https://chalo.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 6,
+  "eng_india_jobs": 1,
+  "sample": [
+   "SDE 1 - Android Developer | Navi Mumbai  BANGALORE "
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live keka board API https://chalo.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. SDE 1 - Android Developer"
+ },
+ {
+  "company": "Exponent Energy",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "exponentenergy",
+  "careers_url": "https://exponentenergy.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 1,
+  "eng_india_jobs": 1,
+  "sample": [
+   "PCB Design Engineer | Bengaluru "
+  ],
+  "evidence": "1 open Bangalore roles (1 eng/tech) on live keka board API https://exponentenergy.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. PCB Design Engineer"
+ },
+ {
+  "company": "Smallest.ai",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "smallest",
+  "careers_url": "https://jobs.ashbyhq.com/smallest",
+  "verified": "ok",
+  "total_jobs": 3,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Software Engineer - Systems and Reliablity | Bengaluru"
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/smallest checked 2026-10-27; e.g. Senior SDET; Software Engineer - Systems and Reliablity"
+ },
+ {
+  "company": "Unacademy",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "smartrecruiters",
+  "slug": "unacademy",
+  "careers_url": "https://jobs.smartrecruiters.com/unacademy",
+  "verified": "ok",
+  "total_jobs": 3,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Software Engineer, Backend | Bengaluru in"
+  ],
+  "evidence": "3 open Bangalore roles (1 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/unacademy/postings checked 2026-10-27; e.g. Software Engineer, Backend"
+ },
+ {
+  "company": "DPDzero",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "freshteam",
+  "slug": "dpdzero",
+  "careers_url": "https://dpdzero.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "4 open Bangalore roles (1 eng/tech) on live freshteam board API https://dpdzero.freshteam.com/jobs checked 2026-10-27; e.g. FULL STACK ENGINEER"
+ },
+ {
+  "company": "Pixxel",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "darwinbox",
+  "slug": "pixxel",
+  "careers_url": "https://pixxel.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://www.pixxel.space/careers links to Darwinbox board (JS-rendered, count not verified)"
+ },
+ {
+  "company": "Scapia",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "freshteam",
+  "slug": "scapia",
+  "careers_url": "https://scapia.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "11 open Bangalore roles (5 eng/tech) on live freshteam board API https://scapia.freshteam.com/jobs checked 2026-10-27; e.g. Engineering; Engineering Manager"
+ },
+ {
+  "company": "Tricog",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "tricog",
+  "careers_url": "https://tricog.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://tricog.com/careers/ links to Zoho Recruit board tricog (job list not parsed)"
+ },
+ {
+  "company": "Zolve",
+  "city": "Bangalore",
+  "type": "startup",
+  "ats": "freshteam",
+  "slug": "zolve",
+  "careers_url": "https://zolve.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "20 open Bangalore roles (19 eng/tech) on live freshteam board API https://zolve.freshteam.com/jobs checked 2026-10-27; e.g. ABOUT ZOLVEWelcome to the financial frontier of limitless possibilities - welcome to Zolve. We're not just a fintech; we're architects of a financial revolution, crafting a narrative that transcends b...; ABOUT ZOLVEWelcome to the financial frontier of limitless possibilities - welcome to Zolve. We're not just a fintech; we're architects of a financial revolution, crafting a narrative that transcends b..."
+ },
+ {
+  "company": "Tekion",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "ashby",
+  "slug": "tekion",
+  "careers_url": "https://jobs.ashbyhq.com/tekion",
+  "verified": "ok",
+  "total_jobs": 95,
+  "eng_india_jobs": 46,
+  "sample": [
+   "Manager, Engineering - BE | Bangalore HQ",
+   "Manager / Sr. Manager AI | Bangalore HQ",
+   "Staff Software Engineer | Bangalore HQ"
+  ],
+  "evidence": "60 open Bangalore roles (41 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/tekion checked 2026-10-27; e.g. Manager, Engineering - BE; Manager / Sr. Manager AI"
+ },
+ {
+  "company": "AlphaSense",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "alphasense",
+  "careers_url": "https://job-boards.greenhouse.io/alphasense",
+  "verified": "ok",
+  "total_jobs": 214,
+  "eng_india_jobs": 44,
+  "sample": [
+   "AI Security Engineer | Remote - India",
+   "Cloud Support Engineer | Remote - United States",
+   "Director, Product Design (AI Experience) | New York, New York, United States; Remote - United States"
+  ],
+  "evidence": "8 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/alphasense/jobs checked 2026-10-27; e.g. Senior Software Engineer; Staff Engineer, AI Product"
+ },
+ {
+  "company": "Pubmatic",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "pubmatic",
+  "careers_url": "https://job-boards.greenhouse.io/pubmatic",
+  "verified": "ok",
+  "total_jobs": 85,
+  "eng_india_jobs": 28,
+  "sample": [
+   "Engineering Manager, Data & Analytics | Pune, IN",
+   "Principal/Senior/Software Engineer (AI-Powered Advertising Agents - AgenticOS) | Pune, IN",
+   "Principal/Senior Software Engineer - Java | Pune, IN"
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/pubmatic/jobs checked 2026-10-27; e.g. Principal/Senior  Software Engineer - Mobile App Monetization (Ad Server); Senior Performance Advertising Engineer"
+ },
+ {
+  "company": "Fivetran",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "fivetran",
+  "careers_url": "https://job-boards.greenhouse.io/fivetran",
+  "verified": "ok",
+  "total_jobs": 172,
+  "eng_india_jobs": 23,
+  "sample": [
+   "Lead Sales Engineer, Enterprise | Remote, California, United States, AMER",
+   "Manager, Customer Support Engineering | Remote, Australia, APAC",
+   "Manager, Software Engineering | Remote, India, APAC"
+  ],
+  "evidence": "23 open Bangalore roles (12 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/fivetran/jobs checked 2026-10-27; e.g. Senior Software Development Engineer in Test; Senior Software Development Engineer in Test - Database Automation"
+ },
+ {
+  "company": "Sarvam AI",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "ashby",
+  "slug": "sarvam",
+  "careers_url": "https://jobs.ashbyhq.com/sarvam",
+  "verified": "ok",
+  "total_jobs": 44,
+  "eng_india_jobs": 23,
+  "sample": [
+   "Data Scientist - Evaluations, Chanakya | Bengaluru",
+   "Embedded Data Scientist, Chanakya | Delhi",
+   "Embedded Infrastructure Engineer, Chanakya | Delhi"
+  ],
+  "evidence": "35 open Bangalore roles (19 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/sarvam checked 2026-10-27; e.g. Data Scientist - Evaluations, Chanakya; Frontend Engineer, Chanakya"
+ },
+ {
+  "company": "Ensono",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "ensono",
+  "careers_url": "https://job-boards.greenhouse.io/ensono",
+  "verified": "ok",
+  "total_jobs": 86,
+  "eng_india_jobs": 22,
+  "sample": [
+   "Expert Application Developer – Workday Finance Application Management | Pune, India",
+   "Expert Automation & Observability Engineer | Remote - United States",
+   "Expert Middleware Engineer | Bengaluru, India; Chennai, India; Hyderabad, India; Pune, India"
+  ],
+  "evidence": "9 open Bangalore roles (6 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/ensono/jobs checked 2026-10-27; e.g. Application Developer – Commercial Apps; Expert Middleware Engineer"
+ },
+ {
+  "company": "Hevo Data",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "hevodata",
+  "careers_url": "https://jobs.lever.co/hevodata",
+  "verified": "ok",
+  "total_jobs": 53,
+  "eng_india_jobs": 20,
+  "sample": [
+   "AI Solution Engineer | Bangalore, India",
+   "Associate Customer Experience Engineer | Pune, Maharashtra",
+   "Associate Software Development Engineer (SDE) Intern | Bangalore, India"
+  ],
+  "evidence": "44 open Bangalore roles (16 eng/tech) on live lever board API https://api.lever.co/v0/postings/hevodata?mode=json checked 2026-10-27; e.g. AI Solution Engineer; Associate Software Development Engineer (SDE) Intern"
+ },
+ {
+  "company": "Kaseya",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "kaseya",
+  "careers_url": "https://job-boards.greenhouse.io/kaseya",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 18,
+  "sample": [
+   "Principal Software Engineer | Pune, India",
+   "Senior Engineer - Oracle Fusion Cloud Applications | Bangalore, India",
+   "Senior Site Reliability Engineer - Linux/AWS/GCP | Pune, India"
+  ],
+  "evidence": "6 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/kaseya/jobs checked 2026-10-27; e.g. Technical Support Engineer"
+ },
+ {
+  "company": "Glean",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "gleanwork",
+  "careers_url": "https://job-boards.greenhouse.io/gleanwork",
+  "verified": "ok",
+  "total_jobs": 132,
+  "eng_india_jobs": 17,
+  "sample": [
+   "AI Data Analyst | Bangalore, India",
+   "AI Success Manager, East  | Remote - US",
+   "AI Success Manager (US East Customer Hours) | Bangalore, India"
+  ],
+  "evidence": "23 open Bangalore roles (12 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/gleanwork/jobs checked 2026-10-27; e.g. AI Data Analyst; AI Success Manager (US East Customer Hours)"
+ },
+ {
+  "company": "Harness",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "harnessinc",
+  "careers_url": "https://job-boards.greenhouse.io/harnessinc",
+  "verified": "ok",
+  "total_jobs": 68,
+  "eng_india_jobs": 17,
+  "sample": [
+   "AppSec Sales Engineer  | San Francisco, California, United States; U.S. (Remote)",
+   "Content Engineer, Developer Relations | U.S. (Remote)",
+   "Customer Experience Engineer I/II | U.S. (Remote)"
+  ],
+  "evidence": "13 open Bangalore roles (10 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/harnessinc/jobs checked 2026-10-27; e.g. Director Software Engineering - AppSec Platform; Engineering Manager - CI"
+ },
+ {
+  "company": "Netskope",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "netskope",
+  "careers_url": "https://job-boards.greenhouse.io/netskope",
+  "verified": "ok",
+  "total_jobs": 128,
+  "eng_india_jobs": 17,
+  "sample": [
+   "Channel Solutions Engineer | Bengaluru, Karnataka, India; Hyderabad, Telangana, India",
+   "Principal Engineer, DLP  | Bengaluru, Karnataka, India",
+   "Principal Product Manager, AI Security  | Bengaluru, Karnataka, India"
+  ],
+  "evidence": "11 open Bangalore roles (10 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/netskope/jobs checked 2026-10-27; e.g. Channel Solutions Engineer; Principal Engineer, DLP"
+ },
+ {
+  "company": "Meesho",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "meesho",
+  "careers_url": "https://jobs.lever.co/meesho",
+  "verified": "ok",
+  "total_jobs": 54,
+  "eng_india_jobs": 13,
+  "sample": [
+   "Data Scientist III | Bangalore, Karnataka",
+   "Data Scientist III (Team- Valmo) | Bangalore, Karnataka",
+   "Director – Sales, Meesho AI Services (MAS) | North India | Delhi NCR"
+  ],
+  "evidence": "51 open Bangalore roles (13 eng/tech) on live lever board API https://api.lever.co/v0/postings/meesho?mode=json checked 2026-10-27; e.g. Data Scientist III; Data Scientist III (Team- Valmo)"
+ },
+ {
+  "company": "Fynd",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "fynd",
+  "careers_url": "https://fynd.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 58,
+  "eng_india_jobs": 12,
+  "sample": [
+   "Python Developer | SDE 2 | JCP | Mumbai ",
+   "DevOps Engineer | Mumbai ",
+   "Fullstack Developer | SDE 1/2 | Commerce | Mumbai "
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live keka board API https://fynd.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Sales Expert – Commerce Platform"
+ },
+ {
+  "company": "Tide",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "tide",
+  "careers_url": "https://job-boards.greenhouse.io/tide",
+  "verified": "ok",
+  "total_jobs": 102,
+  "eng_india_jobs": 11,
+  "sample": [
+   "Director of Engineering, KYX | India, Hyderabad",
+   "Engineering Manager, Financial Services | India, Bengaluru",
+   "Engineering Manager, Financial Services | India, Delhi NCR"
+  ],
+  "evidence": "7 open Bangalore roles (5 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/tide/jobs checked 2026-10-27; e.g. Engineer, Backend - 4 (Java); Engineering Manager, Financial Services"
+ },
+ {
+  "company": "Glance (InMobi)",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "glance",
+  "careers_url": "https://job-boards.greenhouse.io/glance",
+  "verified": "ok",
+  "total_jobs": 33,
+  "eng_india_jobs": 9,
+  "sample": [
+   "Applied Scientist III - Recommendations | Bangalore",
+   "Applied Scientist II - Recommendation | Bangalore",
+   "Consultant - AI Governance Specialist | bangalore"
+  ],
+  "evidence": "19 open Bangalore roles (8 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/glance/jobs checked 2026-10-27; e.g. Consultant - AI Governance Specialist; SDE II - Gen AI"
+ },
+ {
+  "company": "Kapture CX",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "kapturecrm",
+  "careers_url": "https://kapturecrm.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 30,
+  "eng_india_jobs": 9,
+  "sample": [
+   "Management Trainee - AI Operations | Bengaluru ",
+   "Senior Project Manager – AI Delivery | Bengaluru ",
+   "Senior Java Engineer/Tech Lead | Bengaluru "
+  ],
+  "evidence": "21 open Bangalore roles (7 eng/tech) on live keka board API https://kapturecrm.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Senior Project Manager – AI Delivery; Senior Java Engineer/Tech Lead"
+ },
+ {
+  "company": "Navan",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "tripactions",
+  "careers_url": "https://job-boards.greenhouse.io/tripactions",
+  "verified": "ok",
+  "total_jobs": 222,
+  "eng_india_jobs": 9,
+  "sample": [
+   "Frontend Architect | Remote (USA)",
+   "Manager, Engineering | Bengaluru, IN",
+   "Senior Data Scientist, Fraud Operations | Bengaluru, IN"
+  ],
+  "evidence": "13 open Bangalore roles (8 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/tripactions/jobs checked 2026-10-27; e.g. Manager, Engineering; Senior Data Scientist, Fraud Operations"
+ },
+ {
+  "company": "Sigmoid",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "sigmoid",
+  "careers_url": "https://job-boards.greenhouse.io/sigmoid",
+  "verified": "ok",
+  "total_jobs": 41,
+  "eng_india_jobs": 9,
+  "sample": [
+   "Associate Lead Data Scientist | Bengaluru, Karnataka, India",
+   "Database Migration Engineer | Bengaluru, Karnataka, India",
+   "Full Stack Software Development Engineer II | Bengaluru, Karnataka, India"
+  ],
+  "evidence": "35 open Bangalore roles (12 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/sigmoid/jobs checked 2026-10-27; e.g. Associate Lead Data Scientist; BI Solution Architect"
+ },
+ {
+  "company": "ValGenesis",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "valgenesis",
+  "careers_url": "https://jobs.lever.co/valgenesis",
+  "verified": "ok",
+  "total_jobs": 10,
+  "eng_india_jobs": 9,
+  "sample": [
+   "Calling all Software Engineers! | Chennai",
+   "Lead Software Engineer, Data Engineering | Chennai",
+   "Senior Manager, Engineering | Chennai"
+  ],
+  "evidence": "1 open Bangalore roles (1 eng/tech) on live lever board API https://api.lever.co/v0/postings/valgenesis?mode=json checked 2026-10-27; e.g. Calling all Software Engineers!"
+ },
+ {
+  "company": "Commvault",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "commvault",
+  "careers_url": "https://job-boards.greenhouse.io/commvault",
+  "verified": "ok",
+  "total_jobs": 59,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Principal Data Analytics Engineer | Bangalore, India",
+   "Senior Data Engineer | Bangalore, India",
+   "Senior DLP Engineer | Bangalore, India"
+  ],
+  "evidence": "13 open Bangalore roles (8 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/commvault/jobs checked 2026-10-27; e.g. Principal Data Analytics Engineer; Senior Data Engineer"
+ },
+ {
+  "company": "Mindtickle",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "mindtickle",
+  "careers_url": "https://jobs.lever.co/mindtickle",
+  "verified": "ok",
+  "total_jobs": 21,
+  "eng_india_jobs": 7,
+  "sample": [
+   "AI Product Engineer | Pune, Maharashtra",
+   "Customer Success Engineer - II | Pune, Maharashtra",
+   "Lead Design Engineer | Pune, Maharashtra"
+  ],
+  "evidence": "10 open Bangalore roles (2 eng/tech) on live lever board API https://api.lever.co/v0/postings/mindtickle?mode=json checked 2026-10-27; e.g. AI Product Engineer; Lead Design Engineer"
+ },
+ {
+  "company": "Truecaller",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "truecaller",
+  "careers_url": "https://job-boards.greenhouse.io/truecaller",
+  "verified": "ok",
+  "total_jobs": 33,
+  "eng_india_jobs": 7,
+  "sample": [
+   "Director Of Engineering | Bangalore",
+   "Engineering Manager - Infrastructure | Bangalore",
+   "Senior Engineering Manager, Data Science | Bengaluru"
+  ],
+  "evidence": "13 open Bangalore roles (7 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/truecaller/jobs checked 2026-10-27; e.g. Director Of Engineering; Engineering Manager - Infrastructure"
+ },
+ {
+  "company": "InMobi",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "inmobi",
+  "careers_url": "https://job-boards.greenhouse.io/inmobi",
+  "verified": "ok",
+  "total_jobs": 78,
+  "eng_india_jobs": 6,
+  "sample": [
+   "Applied Scientist III | Bangalore",
+   "SDE II - AI | Bangalore",
+   "SDE III - Devops | Bangalore"
+  ],
+  "evidence": "41 open Bangalore roles (7 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/inmobi/jobs checked 2026-10-27; e.g. Applied Scientist III; SDE II - AI"
+ },
+ {
+  "company": "100ms",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "100ms",
+  "careers_url": "https://jobs.lever.co/100ms",
+  "verified": "ok",
+  "total_jobs": 8,
+  "eng_india_jobs": 5,
+  "sample": [
+   "AI Engineer – AI Agents (Healthcare) | Bengaluru",
+   "Benefit Verification Specialist - AI Agents (Healthcare) | Bengaluru",
+   "Product Manager - AI Agents (Healthcare) | Bengaluru"
+  ],
+  "evidence": "8 open Bangalore roles (5 eng/tech) on live lever board API https://api.lever.co/v0/postings/100ms?mode=json checked 2026-10-27; e.g. AI Engineer – AI Agents (Healthcare); Benefit Verification Specialist - AI Agents (Healthcare)"
+ },
+ {
+  "company": "Fampay",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "fampay",
+  "careers_url": "https://jobs.lever.co/fampay",
+  "verified": "ok",
+  "total_jobs": 17,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Data Engineer (SDE 2) | Bengaluru",
+   "SDE 2 Infra | Bengaluru",
+   "Security Engineer 2 | Bengaluru"
+  ],
+  "evidence": "17 open Bangalore roles (4 eng/tech) on live lever board API https://api.lever.co/v0/postings/fampay?mode=json checked 2026-10-27; e.g. Data Engineer (SDE 2); SDE 2 Infra"
+ },
+ {
+  "company": "Keka",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "hr",
+  "careers_url": "https://hr.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 40,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Senior Software Engineer | Bengaluru  Hyderabad ",
+   "Engineering Manager | Hyderabad  Bengaluru ",
+   "Principal Software Engineer | Bengaluru  Hyderabad "
+  ],
+  "evidence": "20 open Bangalore roles (6 eng/tech) on live keka board API https://hr.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. SDET; Senior SDET"
+ },
+ {
+  "company": "Mixpanel",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "mixpanel",
+  "careers_url": "https://job-boards.greenhouse.io/mixpanel",
+  "verified": "ok",
+  "total_jobs": 46,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Senior Customer Engineer - LATAM | Florida, US (Remote)",
+   "Senior Customer Engineer - LATAM | Texas, US (Remote)",
+   "Senior Customer Engineer - LATAM | Remote, US (Remote)"
+  ],
+  "evidence": "4 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/mixpanel/jobs checked 2026-10-27; e.g. Customer Value Architect; Senior Customer Value Architect"
+ },
+ {
+  "company": "Sumo Logic",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "sumologic",
+  "careers_url": "https://job-boards.greenhouse.io/sumologic",
+  "verified": "ok",
+  "total_jobs": 12,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Staff Software Engineer  | Noida, Uttar Pradesh, India",
+   "Staff Software Engineer  | Bangalore, Karnataka, India",
+   "Staff Software Engineer -  Testing & Automation | Noida, Uttar Pradesh, India"
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/sumologic/jobs checked 2026-10-27; e.g. Staff Software Engineer"
+ },
+ {
+  "company": "Turing",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "turing",
+  "careers_url": "https://job-boards.greenhouse.io/turing",
+  "verified": "ok",
+  "total_jobs": 36,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Forward-Deployed AI Engineer | Hyderabad, Telangana, India",
+   "Forward-Deployed AI Engineer | Bengaluru, Karnataka, India",
+   "Senior Full-Stack Engineer - Enterprise AI  | Mumbai, Maharashtra, India"
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/turing/jobs checked 2026-10-27; e.g. Forward-Deployed AI Engineer; Software Engineer"
+ },
+ {
+  "company": "FalconX",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "falconx",
+  "careers_url": "https://job-boards.greenhouse.io/falconx",
+  "verified": "ok",
+  "total_jobs": 18,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Engineering Manager | Bangalore, Karnataka, India",
+   "Senior Software Engineer - Risk | Bangalore, Karnataka, India",
+   "Senior Trading System Support Engineer | Bangalore, Karnataka, India"
+  ],
+  "evidence": "4 open Bangalore roles (3 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/falconx/jobs checked 2026-10-27; e.g. Engineering Manager; Senior Software Engineer - Risk"
+ },
+ {
+  "company": "Gainsight",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "ashby",
+  "slug": "gainsight",
+  "careers_url": "https://jobs.ashbyhq.com/gainsight",
+  "verified": "ok",
+  "total_jobs": 14,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Strategic Technical Project Manager, AI Deployments | USA - FL - Remote",
+   "Staff Software Engineer | IND - Bengaluru",
+   "AI Product Manager | USA - TN - Remote"
+  ],
+  "evidence": "3 open Bangalore roles (1 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/gainsight checked 2026-10-27; e.g. Staff Software Engineer"
+ },
+ {
+  "company": "Razorpay",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "razorpaysoftwareprivatelimited",
+  "careers_url": "https://job-boards.greenhouse.io/razorpaysoftwareprivatelimited",
+  "verified": "ok",
+  "total_jobs": 26,
+  "eng_india_jobs": 3,
+  "sample": [
+   "AI Builder | Bengaluru",
+   "Lead Security Engineer | Bengaluru",
+   "Senior Product Designer (AI Builder) | Bengaluru"
+  ],
+  "evidence": "17 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/razorpaysoftwareprivatelimited/jobs checked 2026-10-27; e.g. Senior Product Designer (AI Builder)"
+ },
+ {
+  "company": "Signzy",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "signzy",
+  "careers_url": "https://signzy.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 21,
+  "eng_india_jobs": 3,
+  "sample": [
+   "SDE-2 | Bengaluru ",
+   "System Engineer | Bengaluru ",
+   "Product Support Engineer | Bangalore "
+  ],
+  "evidence": "13 open Bangalore roles (3 eng/tech) on live keka board API https://signzy.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. SDE-2; System Engineer"
+ },
+ {
+  "company": "CRED",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "cred",
+  "careers_url": "https://jobs.lever.co/cred",
+  "verified": "ok",
+  "total_jobs": 10,
+  "eng_india_jobs": 2,
+  "sample": [
+   "cloud security engineer | bengaluru",
+   "threat detection engineer | bengaluru"
+  ],
+  "evidence": "8 open Bangalore roles (2 eng/tech) on live lever board API https://api.lever.co/v0/postings/cred?mode=json checked 2026-10-27; e.g. cloud security engineer; threat detection engineer"
+ },
+ {
+  "company": "Jupiter",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "jupiter",
+  "careers_url": "https://jupiter.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 5,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Security Engineer 3 | Bengaluru ",
+   "Devops Engineer - SDE 2 | Bengaluru "
+  ],
+  "evidence": "5 open Bangalore roles (2 eng/tech) on live keka board API https://jupiter.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Security Engineer 3; Devops Engineer - SDE 2"
+ },
+ {
+  "company": "MiQ",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "miqdigital",
+  "careers_url": "https://job-boards.greenhouse.io/miqdigital",
+  "verified": "ok",
+  "total_jobs": 50,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Engineering Manager  | Bengaluru",
+   "Software Engineer II | Bengaluru"
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/miqdigital/jobs checked 2026-10-27; e.g. Engineering Manager; Software Engineer II"
+ },
+ {
+  "company": "Observe.AI",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "observeai",
+  "careers_url": "https://job-boards.greenhouse.io/observeai",
+  "verified": "ok",
+  "total_jobs": 8,
+  "eng_india_jobs": 2,
+  "sample": [
+   "AI Agent Engineer | Hyderabad, Telangana, India",
+   "Staff Infrastructure Security Engineer | Bengaluru"
+  ],
+  "evidence": "3 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/observeai/jobs checked 2026-10-27; e.g. Staff Infrastructure Security Engineer"
+ },
+ {
+  "company": "Teachmint",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "teachmint",
+  "careers_url": "https://teachmint.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 29,
+  "eng_india_jobs": 1,
+  "sample": [
+   "SDE 3-Android Developer | India"
+  ],
+  "evidence": "15 open Bangalore roles (0 eng/tech) on live keka board API https://teachmint.keka.com/careers/api/jobs/default/active checked 2026-10-27"
+ },
+ {
+  "company": "Zuora",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "zuora",
+  "careers_url": "https://job-boards.greenhouse.io/zuora",
+  "verified": "ok",
+  "total_jobs": 32,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Customer Solutions Engineer – Payments | Remote - United States"
+  ],
+  "evidence": "1 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/zuora/jobs checked 2026-10-27; e.g. Sr. Solutions Architect - Workday"
+ },
+ {
+  "company": "Apna",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "workable",
+  "slug": "apna",
+  "careers_url": "https://apply.workable.com/apna",
+  "verified": "error: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v1/",
+  "evidence": "58 open Bangalore roles (9 eng/tech) on live workable board API https://apply.workable.com/api/v1/widget/accounts/apna checked 2026-10-27; e.g. Full Stack Developer; Operations Lead - Physical AI Video Annotation"
+ },
+ {
+  "company": "CleverTap",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "custom",
+  "slug": "clevertap",
+  "careers_url": "https://careers.kula.ai/clevertap",
+  "verified": "unsupported",
+  "evidence": "6 open Bangalore roles (0 eng/tech) on live kula board API https://careers.kula.ai/clevertap checked 2026-10-27 (Kula ATS)"
+ },
+ {
+  "company": "Groww",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "groww",
+  "careers_url": "https://job-boards.greenhouse.io/groww",
+  "verified": "ok",
+  "total_jobs": 10,
+  "eng_india_jobs": 0,
+  "evidence": "9 open Bangalore roles (0 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/groww/jobs checked 2026-10-27"
+ },
+ {
+  "company": "LeadSquared",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "leadsquaredhrms",
+  "careers_url": "https://leadsquaredhrms.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://www.leadsquared.com/careers/ links to Darwinbox board (JS-rendered, count not verified)"
+ },
+ {
+  "company": "Locus",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "locus",
+  "careers_url": "https://locus.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://locus.sh/careers/ links to Darwinbox board (JS-rendered, count not verified)"
+ },
+ {
+  "company": "Mygate",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "mygate",
+  "careers_url": "https://mygate.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://mygate.com/careers/ links to Darwinbox board (open-role count not verifiable, JS-rendered)"
+ },
+ {
+  "company": "Ninjacart",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "ninjacart",
+  "careers_url": "https://ninjacart.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "10 open Bangalore roles (0 eng/tech) on live freshteam board API https://ninjacart.freshteam.com/jobs checked 2026-10-27"
+ },
+ {
+  "company": "Nium",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "nium",
+  "careers_url": "https://jobs.lever.co/nium",
+  "verified": "ok",
+  "total_jobs": 19,
+  "eng_india_jobs": 0,
+  "evidence": "4 open Bangalore roles (1 eng/tech) on live lever board API https://api.lever.co/v0/postings/nium?mode=json checked 2026-10-27; e.g. Senior Manager, Site Reliability Engineering (SRE)"
+ },
+ {
+  "company": "Perfios",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "perfios",
+  "careers_url": "https://perfios.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://perfios.ai/careers/ links to Darwinbox board (JS-rendered, count not verified)"
+ },
+ {
+  "company": "Plum",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "custom",
+  "slug": "plumhq",
+  "careers_url": "https://careers.kula.ai/plumhq",
+  "verified": "unsupported",
+  "evidence": "24 open Bangalore roles (0 eng/tech) on live kula board API https://careers.kula.ai/plumhq checked 2026-10-27 (Kula ATS)"
+ },
+ {
+  "company": "Porter",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "porter",
+  "careers_url": "https://porter.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://porter.in/careers links to Darwinbox board (JS-rendered, count not verified)"
+ },
+ {
+  "company": "Zetwerk",
+  "city": "Bangalore",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "zetwerk",
+  "careers_url": "https://zetwerk.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "4 open Bangalore roles (2 eng/tech) on live freshteam board API https://zetwerk.freshteam.com/jobs checked 2026-10-27; e.g. Software Engineering; ReactJS &amp; NodeJS Full stack Developer"
+ },
+ {
+  "company": "Zscaler",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "zscaler",
+  "careers_url": "https://job-boards.greenhouse.io/zscaler",
+  "verified": "ok",
+  "total_jobs": 354,
+  "eng_india_jobs": 104,
+  "sample": [
+   "AI DevOps Engineer | Remote - USA; San Jose, California, USA",
+   "Commercial Sales Engineer - East | Remote - Massachusetts, USA; Remote - New Jersey, USA; Remote - New York, USA; Remote - Virginia, USA",
+   "Director, Site Reliability Engineering (Production Engineering) | Bangalore, IND"
+  ],
+  "evidence": "49 open Bangalore roles (37 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/zscaler/jobs checked 2026-10-27; e.g. Director, Site Reliability Engineering (Production Engineering); Escalation Engineer"
+ },
+ {
+  "company": "GitLab",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "gitlab",
+  "careers_url": "https://job-boards.greenhouse.io/gitlab",
+  "verified": "ok",
+  "total_jobs": 238,
+  "eng_india_jobs": 97,
+  "sample": [
+   "AI Transformation Owner, CRO | Remote, United States",
+   "AI Transformation Owner, Product & Design | Remote, Canada; Remote, United Kingdom; Remote, United States",
+   "Backend Engineer, Create: Repository Management | Remote, United Kingdom"
+  ],
+  "evidence": "23 open Bangalore roles (18 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/gitlab/jobs checked 2026-10-27; e.g. Director of Recruiting, Engineering & IT, Bangalore India; Engineering Manager"
+ },
+ {
+  "company": "Databricks",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "databricks",
+  "careers_url": "https://job-boards.greenhouse.io/databricks",
+  "verified": "ok",
+  "total_jobs": 898,
+  "eng_india_jobs": 86,
+  "sample": [
+   "Director of Engineering | Bengaluru, India",
+   "Director of Engineering (Data Infrastructure) | Bengaluru, India",
+   "Engineering Manager - Backend | Bengaluru, India"
+  ],
+  "evidence": "75 open Bangalore roles (63 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/databricks/jobs checked 2026-10-27; e.g. Director of Engineering; Director of Engineering (Data Infrastructure)"
+ },
+ {
+  "company": "Okta",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "okta",
+  "careers_url": "https://job-boards.greenhouse.io/okta",
+  "verified": "ok",
+  "total_jobs": 389,
+  "eng_india_jobs": 75,
+  "sample": [
+   "Developer Support Engineer | Bengaluru, India",
+   "Digital Solutions Manager (Recruiting Tech & Learning Platforms)  | Bengaluru, India",
+   "Director, Site Reliability Engineering | Bengaluru, India"
+  ],
+  "evidence": "94 open Bangalore roles (74 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/okta/jobs checked 2026-10-27; e.g. Developer Support Engineer; Digital Solutions Manager (Recruiting Tech & Learning Platforms)"
+ },
+ {
+  "company": "Pure Storage",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "purestorage",
+  "careers_url": "https://job-boards.greenhouse.io/purestorage",
+  "verified": "ok",
+  "total_jobs": 368,
+  "eng_india_jobs": 48,
+  "sample": [
+   "Account Executive, AI/HPC, Neo / Sovereign Cloud (EMEA) | Remote, United Kingdom",
+   "Application Engineer (AI Automation) | Bangalore, India",
+   "Cloud Native Escalation Engineer | Bangalore, India"
+  ],
+  "evidence": "62 open Bangalore roles (30 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/purestorage/jobs checked 2026-10-27; e.g. Application Engineer (AI Automation); Cloud Native Escalation Engineer"
+ },
+ {
+  "company": "Toast",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "toast",
+  "careers_url": "https://job-boards.greenhouse.io/toast",
+  "verified": "ok",
+  "total_jobs": 330,
+  "eng_india_jobs": 39,
+  "sample": [
+   "AI Operations Lead, Toast IQ  | Remote, US ",
+   "GTM Engineer - Sales Workflow Automation, Revenue Intelligence | Remote, US",
+   "GTM Engineer, Web | Remote"
+  ],
+  "evidence": "16 open Bangalore roles (11 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/toast/jobs checked 2026-10-27; e.g. Lead Salesforce Developer; Manager II, Software Engineering"
+ },
+ {
+  "company": "MongoDB",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "mongodb",
+  "careers_url": "https://job-boards.greenhouse.io/mongodb",
+  "verified": "ok",
+  "total_jobs": 367,
+  "eng_india_jobs": 36,
+  "sample": [
+   "Application Engineer | Bengaluru",
+   "Cloud Operations Engineer | Bengaluru",
+   "Engineer 3 - Business Systems | Gurugram"
+  ],
+  "evidence": "15 open Bangalore roles (6 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/mongodb/jobs checked 2026-10-27; e.g. Application Engineer; Cloud Operations Engineer"
+ },
+ {
+  "company": "Anthropic",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "anthropic",
+  "careers_url": "https://job-boards.greenhouse.io/anthropic",
+  "verified": "ok",
+  "total_jobs": 679,
+  "eng_india_jobs": 33,
+  "sample": [
+   "Anthropic Fellows Program, AI Safety & Security | London, UK; Ontario, CAN; Remote-Friendly, United States; San Francisco, CA",
+   "Anthropic Fellows Program, ML Systems & Reinforcement Learning | London, UK; Ontario, CAN; Remote-Friendly, United States; San Francisco, CA",
+   "Applied AI Architect | Bangalore, India"
+  ],
+  "evidence": "2 open Bangalore roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/anthropic/jobs checked 2026-10-27; e.g. Applied AI Architect; Applied AI Architect, Partnerships"
+ },
+ {
+  "company": "Stripe",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "stripe",
+  "careers_url": "https://job-boards.greenhouse.io/stripe",
+  "verified": "ok",
+  "total_jobs": 713,
+  "eng_india_jobs": 32,
+  "sample": [
+   "Abuse Research Engineer | Remote from the US",
+   "Backend Engineer, Core Technology | US-Remote, Chicago, Seattle, San Francisco",
+   "Backend Engineer, Developer & End-user Experience Platform | Toronto Canada, San Francisco, Remote in US, Remote in Canada"
+  ],
+  "evidence": "48 open Bangalore roles (10 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/stripe/jobs checked 2026-10-27; e.g. Data Science Manager, Risk; Engineering Manager, Accounting Products"
+ },
+ {
+  "company": "Celonis",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "celonis",
+  "careers_url": "https://job-boards.greenhouse.io/celonis",
+  "verified": "ok",
+  "total_jobs": 224,
+  "eng_india_jobs": 31,
+  "sample": [
+   "AI Quality Engineer | Bangalore, India",
+   "Applied AI Value Architect | Remote, Canada",
+   "Applied Value Engineer | Bangalore, India"
+  ],
+  "evidence": "30 open Bangalore roles (27 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/celonis/jobs checked 2026-10-27; e.g. AI Quality Engineer; Applied Value Engineer"
+ },
+ {
+  "company": "Zeta Global",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "zetaglobal",
+  "careers_url": "https://job-boards.greenhouse.io/zetaglobal",
+  "verified": "ok",
+  "total_jobs": 115,
+  "eng_india_jobs": 24,
+  "sample": [
+   "AI Ops Application Operations Lead | Hyderabad, India",
+   "Director of Engineering | Bengaluru, Karnataka, India",
+   "Lead Application Security Engineer | Remote - United States"
+  ],
+  "evidence": "17 open Bangalore roles (14 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/zetaglobal/jobs checked 2026-10-27; e.g. Director of Engineering; Lead Backend Engineer"
+ },
+ {
+  "company": "Datadog",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "datadog",
+  "careers_url": "https://job-boards.greenhouse.io/datadog",
+  "verified": "ok",
+  "total_jobs": 428,
+  "eng_india_jobs": 21,
+  "sample": [
+   "Commercial Sales Engineer | Bangalore, India",
+   "Developer Advocate - Service Management | California, USA, Remote; New York, USA, Remote",
+   "Developer Advocate - Service Management EMEA | France, Remote; Spain, Remote; The Netherlands, Remote"
+  ],
+  "evidence": "7 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/datadog/jobs checked 2026-10-27; e.g. Mid-Market Sales Engineer"
+ },
+ {
+  "company": "Snowflake",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "ashby",
+  "slug": "snowflake",
+  "careers_url": "https://jobs.ashbyhq.com/snowflake",
+  "verified": "ok",
+  "total_jobs": 356,
+  "eng_india_jobs": 20,
+  "sample": [
+   "Solutions Engineer | MX-Mexico-Remote",
+   "Principal Software Engineer - AI Poland | PL-Poland-Remote",
+   "Senior Solutions Engineer, Observe | US-IL-Remote"
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/snowflake checked 2026-10-27; e.g. Senior Solution Engineer - GCC"
+ },
+ {
+  "company": "Airbnb",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "airbnb",
+  "careers_url": "https://job-boards.greenhouse.io/airbnb",
+  "verified": "ok",
+  "total_jobs": 188,
+  "eng_india_jobs": 18,
+  "sample": [
+   "Machine Learning Engineer, Assistance Engineering | Remote-USA",
+   "Operations Engineer, BizTech | Remote- USA",
+   "Senior Business Solutions Engineer, BizTech(LegalTech) | Bangalore, India"
+  ],
+  "evidence": "5 open Bangalore roles (3 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/airbnb/jobs checked 2026-10-27; e.g. Senior Business Solutions Engineer, BizTech(LegalTech); Senior Staff Software Engineer, Payments"
+ },
+ {
+  "company": "UiPath",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "ashby",
+  "slug": "uipath",
+  "careers_url": "https://jobs.ashbyhq.com/uipath",
+  "verified": "ok",
+  "total_jobs": 106,
+  "eng_india_jobs": 17,
+  "sample": [
+   "Principal Platform Engineer - Site Reliability  | Bangalore - Engineering",
+   "Software Engineer II | Bangalore",
+   "Principal Software Engineer | Bangalore"
+  ],
+  "evidence": "8 open Bangalore roles (8 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/uipath checked 2026-10-27; e.g. Principal Platform Engineer - Site Reliability; Solution Architect"
+ },
+ {
+  "company": "Freshworks",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "freshworks",
+  "careers_url": "https://jobs.smartrecruiters.com/freshworks",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 15,
+  "sample": [
+   "Staff Engineer - Machine Learning | Bengaluru in",
+   "Staff Engineer - Full Stack | Chennai in",
+   "Principal Engineer - Machine Learning | Hyderabad in"
+  ],
+  "evidence": "11 open Bangalore roles (4 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/freshworks/postings checked 2026-10-27; e.g. Staff Engineer - Machine Learning; Principal - Solution Engineering"
+ },
+ {
+  "company": "Rubrik",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "rubrik",
+  "careers_url": "https://job-boards.greenhouse.io/rubrik",
+  "verified": "ok",
+  "total_jobs": 147,
+  "eng_india_jobs": 14,
+  "sample": [
+   "Director, Corporate IT — Employee Experience & AI | Bangalore ",
+   "Engineering Manager Polaris Platform | Bengaluru",
+   "Principal Engineer  | Bangalore"
+  ],
+  "evidence": "27 open Bangalore roles (13 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/rubrik/jobs checked 2026-10-27; e.g. Cyber Resilience Architect, APJ; Director, Corporate IT — Employee Experience & AI"
+ },
+ {
+  "company": "OpenAI",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "ashby",
+  "slug": "openai",
+  "careers_url": "https://jobs.ashbyhq.com/openai",
+  "verified": "ok",
+  "total_jobs": 796,
+  "eng_india_jobs": 13,
+  "sample": [
+   "Software Engineer, Full Stack (People Innovation) | US - Remote",
+   "Security Engineer, Infrastructure Security | US - Remote",
+   "Software Engineer, Infrastructure Security | US - Remote"
+  ],
+  "evidence": "3 open Bangalore roles (3 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/openai checked 2026-10-27; e.g. Applied AI Architect; Partner AI Deployment Engineer - AWS"
+ },
+ {
+  "company": "Arista",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "aristanetworks",
+  "careers_url": "https://jobs.smartrecruiters.com/aristanetworks",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 10,
+  "sample": [
+   "Senior Systems Engineer (Pre Sales) | Mumbai in",
+   "Senior Systems Engineer (Pre Sales) | Bengaluru in",
+   "Software Engineer  | Bengaluru in"
+  ],
+  "evidence": "8 open Bangalore roles (6 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/aristanetworks/postings checked 2026-10-27; e.g. Senior Systems Engineer (Pre Sales); Software Engineer"
+ },
+ {
+  "company": "ServiceNow",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "servicenow",
+  "careers_url": "https://jobs.smartrecruiters.com/servicenow",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 10,
+  "sample": [
+   "Software Engineer | Hyderabad in",
+   "Senior Software Engineer- Full Stack | Hyderabad in",
+   "Software Engineer | Hyderabad in"
+  ],
+  "evidence": "3 open Bangalore roles (1 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/servicenow/postings checked 2026-10-27; e.g. Staff Inbound Product Manager - AI Specialist Evals and Quality Standards"
+ },
+ {
+  "company": "Paytm",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "lever",
+  "slug": "paytm",
+  "careers_url": "https://jobs.lever.co/paytm",
+  "verified": "ok",
+  "total_jobs": 197,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Area Collection Manager - Manager - Lending Collections (Frontend) | Hyderabad, Telangana",
+   "Backend - Senior Software Engineer | Noida, Uttar Pradesh",
+   "Backend - TL/STL | Bangalore, Karnataka"
+  ],
+  "evidence": "38 open Bangalore roles (3 eng/tech) on live lever board API https://api.lever.co/v0/postings/paytm?mode=json checked 2026-10-27; e.g. Backend - TL/STL; Pre Sales - AI Solution Architect"
+ },
+ {
+  "company": "Zeta",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "lever",
+  "slug": "zeta",
+  "careers_url": "https://jobs.lever.co/zeta",
+  "verified": "ok",
+  "total_jobs": 28,
+  "eng_india_jobs": 7,
+  "sample": [
+   "Cloud Network Engineer II | Hyderabad",
+   "Director – Enterprise Applications, Integration, AI & IT Infrastructure | Bangalore - DD",
+   "Lead Site Reliability Engineer | Hyderabad/Bangalore"
+  ],
+  "evidence": "13 open Bangalore roles (2 eng/tech) on live lever board API https://api.lever.co/v0/postings/zeta?mode=json checked 2026-10-27; e.g. Director – Enterprise Applications, Integration, AI & IT Infrastructure; Lead Site Reliability Engineer"
+ },
+ {
+  "company": "Elastic",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "elastic",
+  "careers_url": "https://job-boards.greenhouse.io/elastic",
+  "verified": "ok",
+  "total_jobs": 402,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Consulting Architect - Platform | India",
+   "Lead Salesforce Full Stack AI Engineer | Bangalore, India",
+   "Marketing AI Engineer | Bangalore, India"
+  ],
+  "evidence": "9 open Bangalore roles (4 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/elastic/jobs checked 2026-10-27; e.g. Lead Salesforce Full Stack AI Engineer; Marketing AI Engineer"
+ },
+ {
+  "company": "Bosch",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "boschgroup",
+  "careers_url": "https://jobs.smartrecruiters.com/boschgroup",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Hardware Design Engineer | bengaluru in",
+   "IN_Bosch Rexroth India_Engineer - Testing | Sanand Ahmedabad in",
+   "Senior Engineer/Assistant Manager - Product Engineering | Bengaluru in"
+  ],
+  "evidence": "11 open Bangalore roles (3 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/boschgroup/postings checked 2026-10-27; e.g. Hardware Design Engineer; Hardware Architect"
+ },
+ {
+  "company": "New Relic",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "newrelic",
+  "careers_url": "https://job-boards.greenhouse.io/newrelic",
+  "verified": "ok",
+  "total_jobs": 49,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Lead Software Engineer | Hyderabad, India",
+   "Manager, Software Engineering | Bangalore, India",
+   "Senior Software Engineer | Hyderabad, India"
+  ],
+  "evidence": "2 open Bangalore roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/newrelic/jobs checked 2026-10-27; e.g. Manager, Software Engineering"
+ },
+ {
+  "company": "Airwallex",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "ashby",
+  "slug": "airwallex",
+  "careers_url": "https://jobs.ashbyhq.com/airwallex",
+  "verified": "ok",
+  "total_jobs": 508,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Senior IT Support Engineer, India | IN - Bangalore"
+  ],
+  "evidence": "8 open Bangalore roles (1 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/airwallex checked 2026-10-27; e.g. Senior IT Support Engineer, India"
+ },
+ {
+  "company": "Swiggy",
+  "city": "Bangalore",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "swiggy",
+  "careers_url": "https://jobs.smartrecruiters.com/swiggy",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Sr. Software Development Engineer in Test  | Bengaluru in"
+  ],
+  "evidence": "23 open Bangalore roles (2 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/swiggy/postings checked 2026-10-27; e.g. Senior Manager - Applied Science; Principal Architect"
+ },
+ {
+  "company": "Sarvam AI",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "sarvam",
+  "careers_url": "https://jobs.ashbyhq.com/sarvam",
+  "verified": "ok",
+  "total_jobs": 44,
+  "eng_india_jobs": 23,
+  "sample": [
+   "Data Scientist - Evaluations, Chanakya | Bengaluru",
+   "Embedded Data Scientist, Chanakya | Delhi",
+   "Embedded Infrastructure Engineer, Chanakya | Delhi"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 44 India roles, 9 in Delhi (Chanakya team) incl. Embedded Infrastructure Engineer, Embedded Data Scientist; linked from sarvam.ai/careers"
+ },
+ {
+  "company": "Atlys",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "atlys",
+  "careers_url": "https://jobs.ashbyhq.com/atlys",
+  "verified": "ok",
+  "total_jobs": 22,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Backend Engineer | Delhi HQ",
+   "Platform & Security Engineer | Delhi HQ"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 21 Delhi HQ roles incl. Backend Engineer, Platform roles; also has a Recruitee board (atlys.recruitee.com) with Delhi roles; site links careers.atlys.com"
+ },
+ {
+  "company": "GoKwik",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "gokwik",
+  "careers_url": "https://gokwik.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 25,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Manager - AI GTM and Market Intelligence | Bangalore ",
+   "Lead DevSecOps Engineer | Bangalore  Gurugram "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): 26 open, 20 in NCR, incl. Lead DevSecOps Engineer; gokwik.co/careers redirects to Keka"
+ },
+ {
+  "company": "Bolna",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "ashby",
+  "slug": "bolna",
+  "careers_url": "https://jobs.ashbyhq.com/bolna",
+  "verified": "ok",
+  "total_jobs": 7,
+  "eng_india_jobs": 1,
+  "sample": [
+   "AI Solutions Engineer | Bengaluru"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: AI Solutions Engineer (Bengaluru/Delhi), voice-AI agents startup"
+ },
+ {
+  "company": "Wadhwani AI",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "wadhwaniai",
+  "careers_url": "https://wadhwaniai.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Zoho portal linked from wadhwaniai.org/careers: AI - Engineering (5 jobs), Software Development Engineer - I, Security Engineer - I; Delhi/Mumbai offices"
+ },
+ {
+  "company": "Stashfin",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://www.stashfin.com/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Frontend Engineer, Backend Engineer (Software Development)"
+ },
+ {
+  "company": "Rocket Learning",
+  "city": "Delhi",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "rocketlearning",
+  "careers_url": "https://rocketlearning.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Zoho portal rendered 2026-10-27: Senior DevOps Engineer - Infrastructure & Platform, Data Scientist, IT Engineer-Delhi"
+ },
+ {
+  "company": "Tide",
+  "city": "Delhi",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "tide",
+  "careers_url": "https://job-boards.greenhouse.io/tide",
+  "verified": "ok",
+  "total_jobs": 102,
+  "eng_india_jobs": 11,
+  "sample": [
+   "Director of Engineering, KYX | India, Hyderabad",
+   "Engineering Manager, Financial Services | India, Bengaluru",
+   "Engineering Manager, Financial Services | India, Delhi NCR"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 17 'India, Delhi NCR' roles incl. Engineer, Backend (Java); careers page tide.co/careers links this board"
+ },
+ {
+  "company": "Wingify (VWO)",
+  "city": "Delhi",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "wingify",
+  "careers_url": "https://wingify.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 22,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Lead Engineer - Backend (Data Platform) | India ",
+   "Senior Software Engineer – Full-Stack | Delhi  New Delhi, India ",
+   "Senior Software Engineer - Client Services | India "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): 22 open, incl. Senior Software Engineer - Full-Stack, Lead Engineer - Backend (Data Platform), Delhi"
+ },
+ {
+  "company": "BharatPe",
+  "city": "Delhi",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "bharatpe",
+  "careers_url": "https://bharatpe.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "Freshteam 'Product Careers' portal: Software Developer / Software Engineer listed; bharatpe.com/careers also links bharatpe.darwinbox.in (non-tech)"
+ },
+ {
+  "company": "Shiprocket",
+  "city": "Delhi",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://careers.shiprocket.in/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Senior Software Engineer - Backend (Java) - Fastrr, Senior DevOps Engineer - Fastrr; NCR offices"
+ },
+ {
+  "company": "TrueFan AI",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "truefan",
+  "careers_url": "https://truefan.ai/careers",
+  "verified": "ok",
+  "total_jobs": 8,
+  "eng_india_jobs": 5,
+  "sample": [
+   "ML Engineer | India",
+   "SDE - 2 (Applied AI Engineer – Content Systems) | Gurugram ",
+   "Cloud Security Engineer | Gurugram "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API; legal entity HOGWARTS E-LEARNING UNIVERSE, linked from truefan.ai/careers): SDE-2 Applied AI Engineer, SDE-1 (Python), Frontend Engineer, ML Engineer, Cloud Security Engineer"
+ },
+ {
+  "company": "Zippee",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "zippee",
+  "careers_url": "https://zippee.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 59,
+  "eng_india_jobs": 5,
+  "sample": [
+   "Full Stack Engineer | Gurugram ",
+   "Front End Developer | India",
+   "QA Engineer | Gurugram "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): 59 open, 34 Gurugram incl. Full Stack Engineer, Backend Developer - Python, Mobile Application Developer, Front End Developer, QA Engineer"
+ },
+ {
+  "company": "Shipsy",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "smartrecruiters",
+  "slug": "shipsy",
+  "careers_url": "https://www.shipsy.ai/careers",
+  "verified": "ok",
+  "total_jobs": 4,
+  "eng_india_jobs": 3,
+  "sample": [
+   "QA Engineer | Gurugram in",
+   "Senior Software Engineer | Gurugram in",
+   "Software Engineer (Fullstack/NodeJs/ReactJs) | Gurugram in"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 5 Gurugram roles incl. Engineering Manager, QA Engineer. NOTE shipsy.keka.com is a different company"
+ },
+ {
+  "company": "Spyne",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "spyneai",
+  "careers_url": "https://spyneai.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 15,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Manager - Forward Deployed Engineer | Gurgaon ",
+   "Forward Deployed Engineer | Gurgaon ",
+   "Senior Product Manager (Conversational AI) | Gurgaon "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): 13 Gurgaon roles incl. Forward Deployed Engineer; Inc42 top-funded Gurugram AI startup"
+ },
+ {
+  "company": "Awiros",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "awiros",
+  "careers_url": "https://awiros.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 3,
+  "eng_india_jobs": 2,
+  "sample": [
+   "C++ Engineer (Computer Vision) | Gurugram ",
+   "Computer Vision Engineer | Bengaluru  Gurugram "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): Computer Vision Engineer, C++ Engineer (Computer Vision); video-AI startup, Inc42 Gurugram AI list"
+ },
+ {
+  "company": "Procol",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "procol",
+  "careers_url": "https://procol.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 9,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Quality Assurance Engineer | India",
+   "Software Engineer | India"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): Software Engineer, QA Engineer; Gurugram/Mumbai locations; linked from procol.ai/careers"
+ },
+ {
+  "company": "Indifi",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://www.indifi.com/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Java Backend Developer, NodeJs Developer, UI Developer, Android Developer, Engineering Manager"
+ },
+ {
+  "company": "PlanetSpark",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://www.planetspark.in/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Front End Developer, React Native Developer, Ruby on Rails Developer, AWS Cloud/DevOps Engineer"
+ },
+ {
+  "company": "FleetX",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://www.fleetx.ai/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Firmware Developer, Senior Software Engineer - QA; Gurugram locations"
+ },
+ {
+  "company": "Wobot.ai",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://wobot.ai/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Backend Developer (Golang), Backend Developer (NodeJS), Computer Vision Engineer, Testing Engineer"
+ },
+ {
+  "company": "Leegality",
+  "city": "Gurgaon",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "leegality",
+  "careers_url": "https://careers.leegality.com/careers",
+  "verified": "unsupported",
+  "evidence": "careers.leegality.com is a Zoho Recruit custom domain (also leegality.zohorecruit.in); rendered 2026-10-27: ML Engineer (Jul 2026), Front End Developer - ReactJs, Software Engineer/Sr SE - Python, Tech Lead - FrontEnd, DevOps Engineer (Mumbai/Bangalore, Aug 2026)"
+ },
+ {
+  "company": "ixigo",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "smartrecruiters",
+  "slug": "ixigo",
+  "careers_url": "https://careers.ixigo.com/",
+  "verified": "ok",
+  "total_jobs": 7,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Senior Software Developer - Backend | Gurugram in",
+   "Principal Engineer - Backend | Gurugram in",
+   "Senior Software Engineer - Web | Gurugram in"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 7 Gurugram roles incl. Senior Software Developer - Backend, Principal Engineer - Backend"
+ },
+ {
+  "company": "Zinnia",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "zinnia",
+  "careers_url": "https://job-boards.greenhouse.io/zinnia",
+  "verified": "ok",
+  "total_jobs": 24,
+  "eng_india_jobs": 3,
+  "sample": [
+   "AWS Data Engineer - Data Platform | Gurugram, Haryana, India; Noida, Uttar Pradesh, India",
+   "AWS Data Engineer - Data Platform | Pune, Maharashtra, India",
+   "AWS Data Engineer - Data Platform | Hyderabad"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 8 Gurugram/Noida roles incl. AWS Data Engineer - Data Platform; linked from zinnia.com/careers"
+ },
+ {
+  "company": "Unicommerce",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "unicommerce",
+  "careers_url": "https://unicommerce.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 2,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Engineering Manager | Gurugram ",
+   "Lead Software Engineer - Backend | Gurugram "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka careers API): Lead Software Engineer - Backend, Engineering Manager (Gurugram)"
+ },
+ {
+  "company": "Simpplr",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "simpplr",
+  "careers_url": "https://job-boards.greenhouse.io/simpplr",
+  "verified": "ok",
+  "total_jobs": 7,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Lead Voice AI Engineer | Bengaluru, India; Hybrid - Gurugram, India"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: Lead Voice AI Engineer (Bengaluru / Hybrid Gurugram)"
+ },
+ {
+  "company": "Housing.com",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "housing",
+  "careers_url": "https://housing.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "Freshteam portal: Senior SDE/SDE (Backend - Java), SDE (Mobile - React Native, Remote)"
+ },
+ {
+  "company": "CarDekho (Girnar Software)",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "cardekho",
+  "careers_url": "https://cardekho.darwinbox.in/ms/candidate/606876f7e2c79/careers",
+  "verified": "unsupported",
+  "evidence": "careers.cardekho.com 'Join team' links this Darwinbox portal (girnarsoft.zohorecruit.in also exists); eng roles not individually verified"
+ },
+ {
+  "company": "Great Learning",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://www.mygreatlearning.com/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Data Scientist / AI Engineer / Analytics Engineer, AI/LLM Search, Senior Cloud Engineer"
+ },
+ {
+  "company": "HealthKart",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://www.healthkart.com/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Senior Java Software Engineer (Technology, Gurugram); apply links go to LinkedIn Jobs"
+ },
+ {
+  "company": "GreyOrange",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://careers.greyorange.com/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Solution Architect (Gurugram HQ), Senior Product Manager (Gurugram HQ) via careers.greyorange.com"
+ },
+ {
+  "company": "Cars24",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://careers.cars24.com/",
+  "verified": "no_slug",
+  "evidence": "careers.cars24.com live with Engineering team section and roles list; roles not extracted (cars24.keka.com only has Dubai roles)"
+ },
+ {
+  "company": "MobiKwik",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "mobikwik",
+  "careers_url": "https://mobikwik.darwinbox.in/ms/candidatev2/main/careers/home",
+  "verified": "unsupported",
+  "evidence": "mobikwik.com/careers links this Darwinbox portal; 1 open job visible 2026-10-27 - weak"
+ },
+ {
+  "company": "Tata 1mg",
+  "city": "Gurgaon",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "1mg",
+  "careers_url": "https://1mg.darwinbox.in/ms/candidatev2/main/careers/allJobs",
+  "verified": "unsupported",
+  "evidence": "1mg.com/jobs links this Darwinbox portal; 26 open jobs on 2026-10-27 (first page non-engineering)"
+ },
+ {
+  "company": "MongoDB (India R&D)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "mongodb",
+  "careers_url": "https://job-boards.greenhouse.io/mongodb",
+  "verified": "ok",
+  "total_jobs": 367,
+  "eng_india_jobs": 36,
+  "sample": [
+   "Application Engineer | Bengaluru",
+   "Cloud Operations Engineer | Bengaluru",
+   "Engineer 3 - Business Systems | Gurugram"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 70 Gurugram roles, 31 engineering, e.g. Engineering Manager, AI Builder Experience"
+ },
+ {
+  "company": "Agoda (Gurugram tech hub)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "agoda",
+  "careers_url": "https://job-boards.greenhouse.io/agoda",
+  "verified": "ok",
+  "total_jobs": 312,
+  "eng_india_jobs": 4,
+  "sample": [
+   "Backend Engineer Manager (Gurugram based) | Gurugram",
+   "Software Development Engineer - BackEnd (Staff - Level 4) | Gurugram, IND | Gurugram",
+   "Staff Software Engineer - BackEnd (Level 4) | Gurugram, IND | Gurugram"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 11 Gurugram roles incl. SDE Backend (Staff), Backend Engineering Manager"
+ },
+ {
+  "company": "Urban Company",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://careers.urbancompany.com/",
+  "verified": "no_slug",
+  "evidence": "careers.urbancompany.com live with Engineering & Data team and recent-jobs section; roles not individually extracted"
+ },
+ {
+  "company": "Delhivery",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "darwinbox",
+  "slug": "delhivery",
+  "careers_url": "https://delhivery.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "delhivery.com/careers links this Darwinbox portal; 7 open jobs on 2026-10-27, none engineering on first page"
+ },
+ {
+  "company": "Sprinklr",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://sprinklr.wd1.myworkdayjobs.com/careers",
+  "verified": "no_slug",
+  "evidence": "Workday (tenant sprinklr/site careers) API 2026-10-27: 37 'engineer' hits incl. Senior Product Security Engineer, IT AI and Automation Engineer (Gurgaon)"
+ },
+ {
+  "company": "Mastercard (Gurgaon tech hub)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://mastercard.wd1.myworkdayjobs.com/CorporateCareers",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: Senior Data Scientist, Product Data & Analytics roles in Gurgaon"
+ },
+ {
+  "company": "Expedia Group (Gurgaon)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://expedia.wd108.myworkdayjobs.com/search",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: Senior Software Development Engineer (India - Gurgaon), Principal SDE, GenAI Platform (Gurgaon)"
+ },
+ {
+  "company": "Ciena (Gurugram)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://ciena.wd5.myworkdayjobs.com/Careers",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: 63 software-engineer hits incl. Platform Lead (Gurugram)"
+ },
+ {
+  "company": "PolicyBazaar (PB Fintech)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://www.policybazaar.com/careers/",
+  "verified": "no_slug",
+  "evidence": "Careers page live with NCR locations; ATS not exposed and roles not extracted - weak evidence, check Naukri/LinkedIn"
+ },
+ {
+  "company": "MakeMyTrip",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://careers.makemytrip.com/prod/jobs",
+  "verified": "no_slug",
+  "evidence": "Custom careers portal with /prod/jobs listing; roles not extracted - weak evidence"
+ },
+ {
+  "company": "Airtel (Airtel Digital / Xtelify)",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://careers.airtel.com/",
+  "verified": "no_slug",
+  "evidence": "careers.airtel.com linked from airtel.in; roles not extracted (airtel.zohorecruit.in tenant also exists but unconfirmed) - weak evidence"
+ },
+ {
+  "company": "PayU India",
+  "city": "Gurgaon",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://careers.payu.in/",
+  "verified": "no_slug",
+  "evidence": "SAP SuccessFactors-hosted portal (careers.payu.in, rmkcdn.successfactors.com) linked from payu.in/careers; roles not extracted"
+ },
+ {
+  "company": "Zenwork",
+  "city": "Hyderabad",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "zenwork",
+  "careers_url": "https://zenwork.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 6,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Director of Engineering | India",
+   "Software Engineer-Node.js | HYDERABAD "
+  ],
+  "evidence": "1 open Hyderabad roles (1 eng/tech) on live keka board API https://zenwork.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Software Engineer-Node.js"
+ },
+ {
+  "company": "Zapcom",
+  "city": "Hyderabad",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "zapcg",
+  "careers_url": "https://zapcg.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Careers page https://zapcom.ai/careers links to Zoho Recruit board zapcg (job list not parsed)"
+ },
+ {
+  "company": "Egen",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "egen",
+  "careers_url": "https://jobs.lever.co/egen",
+  "verified": "ok",
+  "total_jobs": 22,
+  "eng_india_jobs": 12,
+  "sample": [
+   "Director of Engineering, Artificial Intelligence (AI) | Remote",
+   "Lead AI Engineer | Remote",
+   "Lead Application Engineer (Java) | Remote"
+  ],
+  "evidence": "3 open Hyderabad roles (3 eng/tech) on live lever board API https://api.lever.co/v0/postings/egen?mode=json checked 2026-10-27; e.g. Principal AI/ML Architect; Principal Data Architect - Multi-Cloud (GCP & Azure)"
+ },
+ {
+  "company": "HighRadius",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "highradius",
+  "careers_url": "https://job-boards.greenhouse.io/highradius",
+  "verified": "ok",
+  "total_jobs": 69,
+  "eng_india_jobs": 11,
+  "sample": [
+   "Agent Developer Test III | Hyderabad, Telangana, India",
+   "Cloud Security Engineer | Hyderabad, Telangana, India",
+   "Forward Deployed Engineer (AP) | Hyderabad, Telangana, India"
+  ],
+  "evidence": "47 open Hyderabad roles (18 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/highradius/jobs checked 2026-10-27; e.g. Agent Developer Test III; Associate Architect - Site Reliability"
+ },
+ {
+  "company": "Zenoti",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "zenoti",
+  "careers_url": "https://job-boards.greenhouse.io/zenoti",
+  "verified": "ok",
+  "total_jobs": 58,
+  "eng_india_jobs": 11,
+  "sample": [
+   "Lead - AI Data Intelligence (ETL,Azure, SQL, Python, Spark, Data Lakehouse) 7 - 11 years exp from SaaS companies | Hyderabad, Telangana, India",
+   "Lead Engineer - Full Stack (AI) | Hyderabad, Telangana, India",
+   "Lead Product Manager(SaaS + AI) | Hyderabad, Telangana, India"
+  ],
+  "evidence": "37 open Hyderabad roles (10 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/zenoti/jobs checked 2026-10-27; e.g. Lead - AI Data Intelligence (ETL,Azure, SQL, Python, Spark, Data Lakehouse) 7 - 11 years exp from SaaS companies; Lead Engineer - Full Stack (AI)"
+ },
+ {
+  "company": "Druva",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "druva",
+  "careers_url": "https://job-boards.greenhouse.io/druva",
+  "verified": "ok",
+  "total_jobs": 31,
+  "eng_india_jobs": 10,
+  "sample": [
+   "Sales Engineer | Pune, Maharashtra, India",
+   "Senior Staff Engineer, Product Security | Pune, Maharashtra, India",
+   "Senior Staff Software Engineer | Pune, Maharashtra, India"
+  ],
+  "evidence": "1 open Hyderabad roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/druva/jobs checked 2026-10-27; e.g. Senior Staff Software Engineer"
+ },
+ {
+  "company": "Sonatype",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "sonatype",
+  "careers_url": "https://jobs.lever.co/sonatype",
+  "verified": "ok",
+  "total_jobs": 14,
+  "eng_india_jobs": 6,
+  "sample": [
+   "Java Product Support Engineer | Colombia - Remote",
+   "Senior Azure DevOps Engineer | Hyderabad",
+   "Senior Full Stack Software Engineer | Hyderabad"
+  ],
+  "evidence": "2 open Hyderabad roles (2 eng/tech) on live lever board API https://api.lever.co/v0/postings/sonatype?mode=json checked 2026-10-27; e.g. Senior Azure DevOps Engineer; Senior Full Stack Software Engineer"
+ },
+ {
+  "company": "Celigo",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "celigo",
+  "careers_url": "https://job-boards.greenhouse.io/celigo",
+  "verified": "ok",
+  "total_jobs": 22,
+  "eng_india_jobs": 2,
+  "sample": [
+   "AI Integration Engineer  | Hyderabad, India",
+   "Senior Developer  | Hyderabad, India"
+  ],
+  "evidence": "2 open Hyderabad roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/celigo/jobs checked 2026-10-27; e.g. AI Integration Engineer; Senior Developer"
+ },
+ {
+  "company": "Workato",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "workato",
+  "careers_url": "https://job-boards.greenhouse.io/workato",
+  "verified": "ok",
+  "total_jobs": 52,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Customer Centric Engineer (US Market)  | Hyderabad, India"
+  ],
+  "evidence": "1 open Hyderabad roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/workato/jobs checked 2026-10-27; e.g. Customer Centric Engineer (US Market)"
+ },
+ {
+  "company": "Darwinbox",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "darwinbox",
+  "careers_url": "https://darwinbox.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "Own Darwinbox careers portal (HQ Hyderabad); SDE-III Backend / Principal SWE roles listed on TCV portfolio board https://portfoliojobs.tcv.com/companies/darwinbox-2"
+ },
+ {
+  "company": "NxtWave",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "nxtwave",
+  "careers_url": "https://nxtwave.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "19 open Hyderabad roles (2 eng/tech) on live freshteam board API https://nxtwave.freshteam.com/jobs checked 2026-10-27; e.g. Associate Technical Content Developer; Full Stack Developer - 2"
+ },
+ {
+  "company": "Skyroot",
+  "city": "Hyderabad",
+  "type": "scaleup",
+  "ats": "zoho",
+  "slug": "skyroot",
+  "careers_url": "https://skyroot.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "6 open Hyderabad roles (5 eng/tech) on live zoho board API https://skyroot.zohorecruit.in/jobs/Careers checked 2026-10-27; e.g. Hardware Design Engineer (AVIONICS); Industrial Engineer"
+ },
+ {
+  "company": "DoorDash India",
+  "city": "Hyderabad",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "doordashindia",
+  "careers_url": "https://job-boards.greenhouse.io/doordashindia",
+  "verified": "ok",
+  "total_jobs": 15,
+  "eng_india_jobs": 5,
+  "sample": [
+   "Architect Manager, Data & AI (GenAI) — Tax Automations & Innovation | India - Remote",
+   "Platform Hiring Specialist (French-speaking) | Hyderbad, India",
+   "Senior Analytics Engineer | Hyderabad, India"
+  ],
+  "evidence": "11 open Hyderabad roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/doordashindia/jobs checked 2026-10-27; e.g. Software Engineer, Data Engineering"
+ },
+ {
+  "company": "Deliveroo",
+  "city": "Hyderabad",
+  "type": "large",
+  "ats": "greenhouse",
+  "slug": "deliveroo",
+  "careers_url": "https://job-boards.greenhouse.io/deliveroo",
+  "verified": "ok",
+  "total_jobs": 203,
+  "eng_india_jobs": 3,
+  "sample": [
+   "Engineering Manager | Hyderabad, India",
+   "Senior Software Engineer | Hyderabad, India",
+   "Staff Software Engineer | Hyderabad, India"
+  ],
+  "evidence": "7 open Hyderabad roles (3 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/deliveroo/jobs checked 2026-10-27; e.g. Engineering Manager; Senior Software Engineer"
+ },
+ {
+  "company": "Notion",
+  "city": "Hyderabad",
+  "type": "large",
+  "ats": "ashby",
+  "slug": "notion",
+  "careers_url": "https://jobs.ashbyhq.com/notion",
+  "verified": "ok",
+  "total_jobs": 140,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Software Engineer, Developer Experience | Hyderabad, India",
+   "Forward Deployed Engineer, India | Hyderabad, India"
+  ],
+  "evidence": "2 open Hyderabad roles (2 eng/tech) on live ashby board API https://api.ashbyhq.com/posting-api/job-board/notion checked 2026-10-27; e.g. Software Engineer, Developer Experience; Forward Deployed Engineer, India"
+ },
+ {
+  "company": "Experian",
+  "city": "Hyderabad",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "experian",
+  "careers_url": "https://jobs.smartrecruiters.com/experian",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Engineering Manager | Hyderabad in"
+  ],
+  "evidence": "2 open Hyderabad roles (2 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/experian/postings checked 2026-10-27; e.g. Solution Architect (Microsoft .NET/Azure); Engineering Manager"
+ },
+ {
+  "company": "Jupiter Money",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "jupiter",
+  "careers_url": "https://jupiter.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 5,
+  "eng_india_jobs": 2,
+  "sample": [
+   "Security Engineer 3 | Bengaluru ",
+   "Devops Engineer - SDE 2 | Bengaluru "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): Security Engineer 3, DevOps Engineer - SDE 2 (Bengaluru); 1 Mumbai role; linked from jupiter.money/careers"
+ },
+ {
+  "company": "LogiNext",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "smartrecruiters",
+  "slug": "loginext",
+  "careers_url": "https://www.loginextsolutions.com/careers",
+  "verified": "ok",
+  "total_jobs": 1,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Senior Software Developer | Mumbai in"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: Senior Software Developer (Mumbai). Main portal is loginext.hire.trakstar.com (Trakstar Hire) showing Product Engineering (29 roles)"
+ },
+ {
+  "company": "Dhan (Raise)",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "dhan",
+  "careers_url": "https://dhan.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 29,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Production Support - Engineering | Mumbai "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): 27 Mumbai roles incl. Production Support - Engineering; linked from dhan.co/career"
+ },
+ {
+  "company": "Truemeds",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "truemeds",
+  "careers_url": "https://truemeds.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 2,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Frontend SDE 1 | India"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API, legal name Intellihealth Solutions): Frontend SDE 1; Mumbai HO"
+ },
+ {
+  "company": "Chalo",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "chalo",
+  "careers_url": "https://chalo.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 6,
+  "eng_india_jobs": 1,
+  "sample": [
+   "SDE 1 - Android Developer | Navi Mumbai  BANGALORE "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): SDE 1 - Android Developer"
+ },
+ {
+  "company": "WebEngage",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "keka",
+  "slug": "webklipper",
+  "careers_url": "https://webklipper.keka.com/careers/",
+  "verified": "ok",
+  "total_jobs": 27,
+  "eng_india_jobs": 1,
+  "sample": [
+   "Devops Engineer/ Senior Devops Engineer  - Linux | Gurugram  Mumbai  "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API, tenant webklipper = WebEngage): 27 open, 21 Mumbai HO incl. DevOps / Senior DevOps Engineer - Linux; webengage.com/careers redirects to current-openings linking this board"
+ },
+ {
+  "company": "Qure.ai",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "qure",
+  "careers_url": "https://qure.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Zoho Recruit portal rendered 2026-10-27: SDE - III, LLM; IT Infra Engineer; APM - AI Products; Mumbai locations listed"
+ },
+ {
+  "company": "Dezerv",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://www.dezerv.in/careers/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Lead Software Engineer, Senior Software Engineer, Engineering Manager, Engineering Director"
+ },
+ {
+  "company": "Arya.ai",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "wellfound",
+  "careers_url": "https://arya.ai/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Senior Data Scientist (apply via wellfound.com/jobs/3542202-senior-data-scientist)"
+ },
+ {
+  "company": "Snapmint",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://careers.snapmint.com/snapmint/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Backend Developer SDE II / SDE III, Senior Search Engineer, iOS Developer (snapmint.zohorecruit.in also exists)"
+ },
+ {
+  "company": "WazirX",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://careers.wazirx.com/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: SDE - Backend (Mumbai), Security Engineer (Remote), Engineering & Product team roles"
+ },
+ {
+  "company": "IDfy",
+  "city": "Mumbai",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://idfy.turbohire.co/careerpage/e73676a8-bc5a-4b43-b9c6-d3fc7a60b572",
+  "verified": "no_slug",
+  "evidence": "TurboHire portal (slug idfy) linked from idfy.com/careers; roles not extracted - weak"
+ },
+ {
+  "company": "Nium",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "nium",
+  "careers_url": "https://jobs.lever.co/nium",
+  "verified": "ok",
+  "total_jobs": 19,
+  "eng_india_jobs": 0,
+  "evidence": "verified via public ATS API 2026-10-27: 8 India roles in Mumbai/Bangalore incl. Senior Manager SRE (Bangalore/Mumbai)"
+ },
+ {
+  "company": "Haptik",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "freshteam",
+  "slug": "haptik",
+  "careers_url": "https://haptik.freshteam.com/jobs",
+  "verified": "unsupported",
+  "evidence": "Freshteam portal linked from haptik.ai/careers: Software Engineer - Backend, Software Engineer Backend L3 (Python), Voice AI Engineer (Hybrid), DevOps Engineer - 2"
+ },
+ {
+  "company": "Upstox",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://upstox.com/careers/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Software Development Engineer III (Java+Rust), Application Security Engineer-1/2, Lead Cybersecurity Engineer; Mumbai-heavy listings"
+ },
+ {
+  "company": "Zepto",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "zepto",
+  "careers_url": "https://zepto.darwinbox.in/ms/candidatev2/main/careers/allJobs",
+  "verified": "unsupported",
+  "evidence": "zepto.com/careers redirects to this Darwinbox portal; only 1 open job visible on 2026-10-27 (tech roles likely posted elsewhere/LinkedIn)"
+ },
+ {
+  "company": "Quantiphi",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://quantiphi.wd1.myworkdayjobs.com/careers_at_quantiphi",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: 73 'engineer' hits incl. Senior Data Engineer, Senior Data Engineer - BI developer (Mumbai Eureka)"
+ },
+ {
+  "company": "BrowserStack",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://browserstack.wd3.myworkdayjobs.com/External",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: 19 'engineer' hits incl. Engineering Manager (Mumbai - WFO)"
+ },
+ {
+  "company": "Fractal Analytics",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://fractal.wd1.myworkdayjobs.com/Careers",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: 109 'engineer' hits (multi-location India incl. Mumbai HQ, Gurugram, Noida); fractal.ai/careers redirects here"
+ },
+ {
+  "company": "CleverTap",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://careers.kula.ai/clevertap",
+  "verified": "no_slug",
+  "evidence": "Kula ATS board linked from clevertap.com/careers, rendered 2026-10-27: DevOps Engineer (Engineering, Mumbai, on-site), Client Platform Engineering roles; also has clevertap.darwinbox.in"
+ },
+ {
+  "company": "Dream Sports (Dream11)",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://www.dreamsports.group/lifeatdreamsports",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Software Development Engineer II - ML Platform, Dream11. Old jobs.lever.co/dreamsports board link returns 'Document not found'"
+ },
+ {
+  "company": "Purplle",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://purplle.turbohire.co/",
+  "verified": "no_slug",
+  "evidence": "TurboHire portal (slug purplle) linked from purplle.com/careers; no eng roles visible on 2026-10-27 - weak"
+ },
+ {
+  "company": "Perfios",
+  "city": "Mumbai",
+  "type": "scaleup",
+  "ats": "darwinbox",
+  "slug": "perfios",
+  "careers_url": "https://perfios.darwinbox.in/ms/candidate/careers",
+  "verified": "unsupported",
+  "evidence": "perfios.ai/careers links this Darwinbox portal; roles not extracted - weak"
+ },
+ {
+  "company": "JioStar",
+  "city": "Mumbai",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://jiostar.wd102.myworkdayjobs.com/jiostar",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: 133 'engineer' hits incl. Senior SDE - Data Engineer (Mumbai Urmi), Senior Data Engineer, Senior Cybersecurity Engineer"
+ },
+ {
+  "company": "Morningstar (Mumbai)",
+  "city": "Mumbai",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://morningstar.wd5.myworkdayjobs.com/Americas",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: Lead Software Engineer, Senior Software Engineer (Engagement), Sr Engineering Manager - Mumbai"
+ },
+ {
+  "company": "Rezo.ai",
+  "city": "Noida",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "rezo",
+  "careers_url": "https://rezo.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Zoho portal linked from rezo.ai/careers (portal titled 'PeoplePlus'): Senior Backend Engineer - Speech Platform, ML Engineer - Speech, Cloud Engineer (Telephony)"
+ },
+ {
+  "company": "STAGE",
+  "city": "Noida",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "stage",
+  "careers_url": "https://stage.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "Zoho portal linked from stage.in: multiple profiles, mostly content/AI-artist; Data Engineer listed as filled - weak eng evidence"
+ },
+ {
+  "company": "Credgenics",
+  "city": "Noida",
+  "type": "startup",
+  "ats": "custom",
+  "careers_url": "https://credgenics.com/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page uses ZappyHire (careers.zappyhire.com); credgenics.keka.com is 403 (disabled); roles not extracted - weak"
+ },
+ {
+  "company": "TestMu AI (LambdaTest)",
+  "city": "Noida",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "lambdatest",
+  "careers_url": "https://www.testmuai.com/career/",
+  "verified": "ok",
+  "total_jobs": 6,
+  "eng_india_jobs": 2,
+  "sample": [
+   "AI PRODUCT MANAGER | Noida ",
+   "BACKEND HEAVY -PLATFORM ENGINEER | Noida "
+  ],
+  "evidence": "verified via public ATS API 2026-10-27 (Keka API): AI Product Manager + NCR roles; lambdatest.com/careers redirects to testmuai.com"
+ },
+ {
+  "company": "Appinventiv",
+  "city": "Noida",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://appinventiv.com/career/",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: AI/ML Engineer, Software Development openings; Noida HQ"
+ },
+ {
+  "company": "Innovaccer",
+  "city": "Noida",
+  "type": "scaleup",
+  "ats": "workable",
+  "slug": "innovaccer-analytics",
+  "careers_url": "https://apply.workable.com/innovaccer-analytics/",
+  "verified": "error: Client error '429 Too Many Requests' for url 'https://apply.workable.com/api/v1/",
+  "evidence": "verified via public ATS API 2026-10-27 (Workable widget API): 91 open, 51 Noida, e.g. Software Development Engineer-III Full Stack, Staff Engineer - Backend (Gravity), Staff Engineer - Healthcare Interoperability; linked from innovaccer.com/careers/jobs"
+ },
+ {
+  "company": "Paytm",
+  "city": "Noida",
+  "type": "large",
+  "ats": "lever",
+  "slug": "paytm",
+  "careers_url": "https://jobs.lever.co/paytm",
+  "verified": "ok",
+  "total_jobs": 197,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Area Collection Manager - Manager - Lending Collections (Frontend) | Hyderabad, Telangana",
+   "Backend - Senior Software Engineer | Noida, Uttar Pradesh",
+   "Backend - TL/STL | Bangalore, Karnataka"
+  ],
+  "evidence": "verified via public ATS API 2026-10-27: 197 open, 131 in Noida/Mumbai, e.g. Backend - Senior Software Engineer (Noida)"
+ },
+ {
+  "company": "Times Internet",
+  "city": "Noida",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://timesinternet.in/careers",
+  "verified": "no_slug",
+  "evidence": "Careers page rendered 2026-10-27 lists: Engineering Head - CMS, AGI; Noida HQ"
+ },
+ {
+  "company": "Clarivate (Noida)",
+  "city": "Noida",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://clarivate.wd3.myworkdayjobs.com/Clarivate_Careers",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: Quality Assurance Engineer, Technical Architect (ServiceNow) - Noida"
+ },
+ {
+  "company": "Ameriprise India",
+  "city": "Noida",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://ameriprise.wd5.myworkdayjobs.com/Ameriprise",
+  "verified": "no_slug",
+  "evidence": "Workday API 2026-10-27: ServiceNow Principal Lead (Noida), Director Investment Technology (Gurugram)"
+ },
+ {
+  "company": "Info Edge (Naukri, 99acres)",
+  "city": "Noida",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://careers.infoedge.com/infoedge/",
+  "verified": "no_slug",
+  "evidence": "Custom careers portal live; roles not extracted - weak evidence"
+ },
+ {
+  "company": "Gruve",
+  "city": "Pune",
+  "type": "startup",
+  "ats": "greenhouse",
+  "slug": "gruve",
+  "careers_url": "https://job-boards.greenhouse.io/gruve",
+  "verified": "ok",
+  "total_jobs": 28,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Director Cisco Security Data Center and AI Services Sales | USA (Remote)",
+   "Engineering Manager – Platform Engineering  | Pune, Maharashtra, India",
+   "Infrastructure Security Engineer-L2 (Palo Alto & NGFW) | Mumbai, Maharashtra, India"
+  ],
+  "evidence": "5 open Pune roles (1 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/gruve/jobs checked 2026-10-27; e.g. Engineering Manager – Platform Engineering"
+ },
+ {
+  "company": "Anchanto",
+  "city": "Pune",
+  "type": "startup",
+  "ats": "zoho",
+  "slug": "anchanto",
+  "careers_url": "https://anchanto.zohorecruit.in/jobs/Careers",
+  "verified": "unsupported",
+  "evidence": "14 open Pune roles (8 eng/tech) on live zoho board API https://anchanto.zohorecruit.in/jobs/Careers checked 2026-10-27; e.g. DevOps and IT Infrastructure; Engineering Manager - Ruby on Rails"
+ },
+ {
+  "company": "Addepar",
+  "city": "Pune",
+  "type": "scaleup",
+  "ats": "greenhouse",
+  "slug": "addepar1",
+  "careers_url": "https://job-boards.greenhouse.io/addepar1",
+  "verified": "ok",
+  "total_jobs": 110,
+  "eng_india_jobs": 10,
+  "sample": [
+   "Sales Engineer | New York, NY; Remote, USA",
+   "Software Engineer - Customer Facing Applied AI  | Remote, USA",
+   "Sr. Enterprise Sales Engineer | New York, NY; Remote, USA"
+  ],
+  "evidence": "17 open Pune roles (2 eng/tech) on live greenhouse board API https://boards-api.greenhouse.io/v1/boards/addepar1/jobs checked 2026-10-27; e.g. Software Engineering Manager(Backend); Team Lead, Field Engineer"
+ },
+ {
+  "company": "Scalefusion",
+  "city": "Pune",
+  "type": "scaleup",
+  "ats": "keka",
+  "slug": "promobi",
+  "careers_url": "https://promobi.keka.com/careers",
+  "verified": "ok",
+  "total_jobs": 20,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Embedded Software Engineer | Pune ",
+   "Product Test Engineer Apple | Pune ",
+   "Product Test Engineer - Windows | Pune "
+  ],
+  "evidence": "16 open Pune roles (8 eng/tech) on live keka board API https://promobi.keka.com/careers/api/jobs/default/active checked 2026-10-27; e.g. Embedded Software Engineer; Product Test Engineer Apple"
+ },
+ {
+  "company": "Icertis",
+  "city": "Pune",
+  "type": "scaleup",
+  "ats": "custom",
+  "careers_url": "https://www.icertis.com/company/careers/",
+  "verified": "no_slug",
+  "evidence": "Careers page links to Oracle Cloud recruiting (iaaviz.fa.ocs.oraclecloud.com); Pune HQ engineering; ats=custom (Oracle HCM)"
+ },
+ {
+  "company": "Pattern",
+  "city": "Pune",
+  "type": "scaleup",
+  "ats": "lever",
+  "slug": "pattern",
+  "careers_url": "https://jobs.lever.co/pattern",
+  "verified": "ok",
+  "total_jobs": 99,
+  "eng_india_jobs": 0,
+  "evidence": "10 open Pune roles (0 eng/tech) on live lever board API https://api.lever.co/v0/postings/pattern?mode=json checked 2026-10-27"
+ },
+ {
+  "company": "NielsenIQ",
+  "city": "Pune",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "nielseniq",
+  "careers_url": "https://jobs.smartrecruiters.com/nielseniq",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 8,
+  "sample": [
+   "Software Engineer (python,Django,Pandas/ Polars) | Pune in",
+   "Support Engineer (PL/SQL, Java, Unix) | Chennai in",
+   "Manager, Engineering | Pune in"
+  ],
+  "evidence": "8 open Pune roles (4 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/nielseniq/postings checked 2026-10-27; e.g. Manager, Engineering; GenAI Engineer - Database"
+ },
+ {
+  "company": "Ubisoft",
+  "city": "Pune",
+  "type": "large",
+  "ats": "smartrecruiters",
+  "slug": "ubisoft2",
+  "careers_url": "https://jobs.smartrecruiters.com/ubisoft2",
+  "verified": "ok",
+  "total_jobs": 100,
+  "eng_india_jobs": 2,
+  "sample": [
+   "R&D Engineer (C++) | Pune in",
+   "R&D Engineer (GEN AI/ ML) | Pune in"
+  ],
+  "evidence": "7 open Pune roles (3 eng/tech) on live smartrecruiters board API https://api.smartrecruiters.com/v1/companies/ubisoft2/postings checked 2026-10-27; e.g. R&D Engineer (C++); Technical Architect"
+ },
+ {
+  "company": "Qualys",
+  "city": "Pune",
+  "type": "large",
+  "ats": "custom",
+  "careers_url": "https://qualys.wd5.myworkdayjobs.com/Careers",
+  "verified": "no_slug",
+  "evidence": "Careers page https://www.qualys.com/careers links to Workday (large Pune engineering center); ats=custom (Workday)"
+ }
+]
