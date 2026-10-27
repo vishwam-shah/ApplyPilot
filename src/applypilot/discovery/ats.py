@@ -1,4 +1,4 @@
-"""Company career boards via public ATS APIs: Greenhouse, Lever, Ashby.
+"""Company career boards via public ATS APIs: Greenhouse, Lever, Ashby, Keka.
 
 These boards publish their open roles as JSON without auth, so discovery is
 fast, needs no scraping, and the apply URL goes straight to the ATS form the
@@ -10,8 +10,11 @@ Configured in searches.yaml:
       greenhouse: [razorpay, groww]
       lever: [cred]
       ashby: [sarvam]
-    # or point at a file with the same three lists (e.g. job-apply-agent's sources.yaml)
+      keka: [spyneai]
+    # or point at files with the same lists (e.g. job-apply-agent's sources.yaml)
     ats_sources_file: C:/path/to/sources.yaml
+    ats_sources_files: [C:/path/to/more.yaml]
+    max_experience_years: 3   # drop roles whose minimum experience is above this
 
 Titles must contain one of ``title_keywords`` (falls back to the search
 ``queries``), must not contain ``exclude_titles``, and the location must pass
@@ -122,13 +125,49 @@ def _ashby(client: httpx.Client, slug: str) -> list[dict]:
     return out
 
 
-_FETCHERS = {"greenhouse": _greenhouse, "lever": _lever, "ashby": _ashby}
+def _keka(client: httpx.Client, slug: str) -> list[dict]:
+    base = f"https://{slug}.keka.com/careers"
+    r = client.get(f"{base}/api/jobs/default/active")
+    r.raise_for_status()
+    out = []
+    for j in r.json():
+        locs = j.get("jobLocations") or []
+        loc = "; ".join(", ".join(x for x in (l.get("city"), l.get("countryName")) if x) for l in locs)
+        url = f"{base}/jobdetails/{j.get('id')}"
+        out.append({
+            "url": url,
+            "application_url": url,
+            "title": (j.get("title") or "").strip(),
+            "location": loc or "India",
+            "description": _text(j.get("description")),
+            "company": slug,
+            "salary": j.get("salaryRangeFormat"),
+            "experience": j.get("experience"),
+            "posted": j.get("publishedOn"),
+        })
+    return out
+
+
+_FETCHERS = {"greenhouse": _greenhouse, "lever": _lever, "ashby": _ashby, "keka": _keka}
+
+_YEARS_RE = re.compile(r"(\d{1,2})\s*(?:\+|-\s*\d{1,2}|to\s*\d{1,2})?\s*\+?\s*(?:years|yrs)", re.I)
+
+
+def _min_experience(j: dict) -> int | None:
+    """Minimum years asked for: Keka's experience field, else the first 'N years' in the text."""
+    exp = str(j.get("experience") or "")
+    m = re.match(r"\s*(\d{1,2})", exp)
+    if m:
+        return int(m.group(1))
+    m = _YEARS_RE.search(j.get("description") or "")
+    return int(m.group(1)) if m else None
 
 
 def _load_boards(cfg: dict) -> dict[str, list[str]]:
     boards: dict[str, list[str]] = {k: [] for k in _FETCHERS}
-    src = cfg.get("ats_sources_file")
-    if src:
+    for src in [cfg.get("ats_sources_file"), *(cfg.get("ats_sources_files") or [])]:
+        if not src:
+            continue
         path = Path(src).expanduser()
         if path.exists():
             data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
@@ -161,6 +200,7 @@ def run_ats_discovery(cfg: dict | None = None, workers: int = 8) -> dict:
 
     keywords = cfg.get("title_keywords") or [q["query"] for q in cfg.get("queries", []) if q.get("query")]
     exclude = cfg.get("exclude_titles") or []
+    max_exp = cfg.get("max_experience_years")
     accept, reject = config.location_filters(cfg)
 
     init_db()
@@ -189,6 +229,9 @@ def run_ats_discovery(cfg: dict | None = None, workers: int = 8) -> dict:
                 continue
             if not _title_ok(j["title"], keywords, exclude) or \
                     not config.location_ok(j["location"], accept, reject):
+                filtered += 1
+                continue
+            if max_exp is not None and (_min_experience(j) or 0) > max_exp:
                 filtered += 1
                 continue
             desc = j.get("description") or None
